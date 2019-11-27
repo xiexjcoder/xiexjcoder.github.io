@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="个人技术博客"><title>互联网求职——NOSQL | XiexjCoder Blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.0/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><meta name="generator" content="Hexo 4.0.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">互联网求职——NOSQL</h1><a id="logo" href="/.">XiexjCoder Blog</a><p class="description">如果你不能把它简单地解释出来，那说明你还没有很好的理解它</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">互联网求职——NOSQL</h1><div class="post-meta">Nov 22, 2019<span> | </span><span class="category"><a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C/">互联网求职</a></span><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a class="disqus-comment-count" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8BNOSQL/#vcomment"><span class="valine-comment-count" data-xid="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8BNOSQL/"></span><span> 条评论</span></a><div class="post-content"><h3 id="redis-memecache"><a href="#redis-memecache" class="headerlink" title="redis/memecache"></a><strong>redis/memecache</strong></h3><ul>
+<li><h4 id="redis是什么？都有哪些使用场景？"><a href="#redis是什么？都有哪些使用场景？" class="headerlink" title="redis是什么？都有哪些使用场景？"></a>redis是什么？都有哪些使用场景？</h4><p>  Redis是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。<br>  Redis 使用场景：</p>
+<ul>
+<li>数据高并发的读写</li>
+<li>海量数据的读写</li>
+<li>对扩展性要求高的数据</li>
+</ul>
+</li>
+<li><h4 id="redis有哪些功能？"><a href="#redis有哪些功能？" class="headerlink" title="redis有哪些功能？"></a>redis有哪些功能？</h4><ul>
+<li>数据缓存功能</li>
+<li>分布式锁的功能</li>
+<li>支持数据持久化</li>
+<li>支持事务</li>
+<li>支持消息队列</li>
+</ul>
+</li>
+<li><h4 id="redis和memecache有什么区别？"><a href="#redis和memecache有什么区别？" class="headerlink" title="redis和memecache有什么区别？"></a>redis和memecache有什么区别？</h4><ul>
+<li>memcached所有的值均是简单的字符串，redis作为其替代者，支持更为丰富的数据类型</li>
+<li>redis的速度比memcached快很多</li>
+<li>redis可以持久化其数据</li>
+</ul>
+</li>
+<li><h4 id="redis为什么是单线程的？"><a href="#redis为什么是单线程的？" class="headerlink" title="redis为什么是单线程的？"></a>redis为什么是单线程的？</h4><p>  因为 cpu 不是 Redis 的瓶颈，Redis 的瓶颈最有可能是机器内存或者网络带宽。既然单线程容易实现，而且 cpu 又不会成为瓶颈，那就顺理成章地采用单线程的方案了。<br>  关于 Redis 的性能，官方网站也有，普通笔记本轻松处理每秒几十万的请求。<br>  而且单线程并不代表就慢 nginx 和 nodejs 也都是高性能单线程的代表。</p>
+</li>
+<li><h4 id="什么是缓存穿透？怎么解决？"><a href="#什么是缓存穿透？怎么解决？" class="headerlink" title="什么是缓存穿透？怎么解决？"></a>什么是缓存穿透？怎么解决？</h4><ul>
+<li>缓存穿透：指查询一个一定不存在的数据，由于缓存是不命中时需要从数据库查询，查不到数据则不写入缓存，这将导致这个不存在的数据每次请求都要到数据库去查询，造成缓存穿透。</li>
+<li>解决方案：最简单粗暴的方法如果一个查询返回的数据为空（不管是数据不存在，还是系统故障），我们就把这个空结果进行缓存，但它的过期时间会很短，最长不超过五分钟。</li>
+</ul>
+</li>
+<li><h4 id="redis支持的数据类型有哪些？"><a href="#redis支持的数据类型有哪些？" class="headerlink" title="redis支持的数据类型有哪些？"></a>redis支持的数据类型有哪些？</h4><p>  string、list、hash、set、zset。</p>
+</li>
+<li><h4 id="redis支持的java客户端都有哪些？"><a href="#redis支持的java客户端都有哪些？" class="headerlink" title="redis支持的java客户端都有哪些？"></a>redis支持的java客户端都有哪些？</h4><p>  Redisson、Jedis、lettuce等等，官方推荐使用Redisson。</p>
+</li>
+<li><h4 id="jedis和redisson有哪些区别？"><a href="#jedis和redisson有哪些区别？" class="headerlink" title="jedis和redisson有哪些区别？"></a>jedis和redisson有哪些区别？</h4><p>  Jedis是Redis的Java实现的客户端，其API提供了比较全面的Redis命令的支持。<br>  Redisson实现了分布式和可扩展的Java数据结构，和Jedis相比，功能较为简单，不支持字符串操作，不支持排序、事务、管道、分区等Redis特性。Redisson的宗旨是促进使用者对Redis的关注分离，从而让使用者能够将精力更集中地放在处理业务逻辑上。</p>
+</li>
+<li><h4 id="怎么保证缓存和数据库数据的一致性？"><a href="#怎么保证缓存和数据库数据的一致性？" class="headerlink" title="怎么保证缓存和数据库数据的一致性？"></a>怎么保证缓存和数据库数据的一致性？</h4><ul>
+<li>合理设置缓存的过期时间。</li>
+<li>新增、更改、删除数据库操作时同步更新 Redis，可以使用事物机制来保证数据的一致性。</li>
+</ul>
+</li>
+<li><h4 id="redis持久化有几种方式？"><a href="#redis持久化有几种方式？" class="headerlink" title="redis持久化有几种方式？"></a>redis持久化有几种方式？</h4><p>  Redis 的持久化有两种方式，或者说有两种策略：</p>
+<ul>
+<li>RDB（Redis Database）：指定的时间间隔能对你的数据进行快照存储。</li>
+<li>AOF（Append Only File）：每一个收到的写命令都通过write函数追加到文件中。</li>
+</ul>
+</li>
+<li><h4 id="redis怎么实现分布式锁？"><a href="#redis怎么实现分布式锁？" class="headerlink" title="redis怎么实现分布式锁？"></a>redis怎么实现分布式锁？</h4><p>  Redis 分布式锁其实就是在系统里面占一个“坑”，其他程序也要占“坑”的时候，占用成功了就可以继续执行，失败了就只能放弃或稍后重试。<br>  占坑一般使用 setnx(set if not exists)指令，只允许被一个程序占有，使用完调用 del 释放锁。</p>
+</li>
+<li><h4 id="redis分布式锁有什么缺陷？"><a href="#redis分布式锁有什么缺陷？" class="headerlink" title="redis分布式锁有什么缺陷？"></a>redis分布式锁有什么缺陷？</h4><p>  Redis 分布式锁不能解决超时的问题，分布式锁有一个超时时间，程序的执行如果超出了锁的超时时间就会出现问题。</p>
+</li>
+<li><h4 id="redis如何做内存优化？"><a href="#redis如何做内存优化？" class="headerlink" title="redis如何做内存优化？"></a>redis如何做内存优化？</h4><p>  尽可能使用散列表（hashes），散列表（是说散列表里面存储的数少）使用的内存非常小，所以你应该尽可能的将你的数据模型抽象到一个散列表里面。<br>  比如你的web系统中有一个用户对象，不要为这个用户的名称，姓氏，邮箱，密码设置单独的key,而是应该把这个用户的所有信息存储到一张散列表里面。</p>
+</li>
+<li><h4 id="redis淘汰策略有哪些？"><a href="#redis淘汰策略有哪些？" class="headerlink" title="redis淘汰策略有哪些？"></a>redis淘汰策略有哪些？</h4><ul>
+<li>volatile-lru：从已设置过期时间的数据集（server. db[i]. expires）中挑选最近最少使用的数据淘汰。</li>
+<li>volatile-ttl：从已设置过期时间的数据集（server. db[i]. expires）中挑选将要过期的数据淘汰。</li>
+<li>volatile-random：从已设置过期时间的数据集（server. db[i]. expires）中任意选择数据淘汰。</li>
+<li>allkeys-lru：从数据集（server. db[i]. dict）中挑选最近最少使用的数据淘汰。</li>
+<li>allkeys-random：从数据集（server. db[i]. dict）中任意选择数据淘汰。</li>
+<li>no-enviction（驱逐）：禁止驱逐数据。</li>
+</ul>
+</li>
+<li><h4 id="redis常见的性能问题有哪些？该如何解决？"><a href="#redis常见的性能问题有哪些？该如何解决？" class="headerlink" title="redis常见的性能问题有哪些？该如何解决？"></a>redis常见的性能问题有哪些？该如何解决？</h4><ul>
+<li>主服务器写内存快照，会阻塞主线程的工作，当快照比较大时对性能影响是非常大的，会间断性暂停服务，所以主服务器最好不要写内存快照。</li>
+<li>Redis 主从复制的性能问题，为了主从复制的速度和连接的稳定性，主从库最好在同一个局域网内。</li>
+</ul>
+</li>
+</ul>
+</div><div class="tags"></div><div class="post-nav"><a class="pre" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8B%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E7%AF%87/">互联网求职——开源框架</a><a class="next" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8BMySQL/">互联网求职——MySQL</a></div><div id="vcomment"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script><script>var notify = 'false' ? true : false;
+var verify = 'false' ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'HMCVMu79BXKku7a95jqPbsfq-gzGzoHsz',
+  appKey:'jvqP2PXthjron3FtNuTqIm8F',
+  placeholder:'Just so so',
+  avatar:'mm',
+  guest_info:guest_info,
+  pageSize:'10'
+})</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C/">互联网求职</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87/">基础学习篇</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E8%AE%B0/">手记</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/11/26/Java%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7-Junit/">单元测试工具-Junit</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/DOS%E5%91%BD%E4%BB%A4/">DOS常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/%E6%AF%8F%E5%A4%A9%E4%B8%80%E6%A2%97/">每天一梗</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/23/Redis%E5%85%A5%E9%97%A8%E7%AF%87/">Redis入门篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/23/%E6%AF%8F%E6%97%A5%E5%B7%A5%E4%BD%9C%E5%86%85%E5%AE%B9%E6%B8%85%E5%8D%95/">每日工作内容清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/23/IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">IDEA使用记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E4%B9%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">互联网求职——设计模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8B%E4%B8%AD%E9%97%B4%E4%BB%B6/">互联网求职——中间件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E9%A1%B9%E7%9B%AE%E7%AF%87/">互联网求职——项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8BLinux%E7%AF%87/">互联网求职——LINUX</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">XiexjCoder Blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

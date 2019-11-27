@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="个人技术博客"><title>互联网求职——Java基础 | XiexjCoder Blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.0/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><meta name="generator" content="Hexo 4.0.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">互联网求职——Java基础</h1><a id="logo" href="/.">XiexjCoder Blog</a><p class="description">如果你不能把它简单地解释出来，那说明你还没有很好的理解它</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">互联网求职——Java基础</h1><div class="post-meta">Nov 22, 2019<span> | </span><span class="category"><a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C/">互联网求职</a></span><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a class="disqus-comment-count" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8BJAVA%E5%9F%BA%E7%A1%80%E7%AF%87/#vcomment"><span class="valine-comment-count" data-xid="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8BJAVA%E5%9F%BA%E7%A1%80%E7%AF%87/"></span><span> 条评论</span></a><div class="post-content"><h3 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a><strong>Java基础</strong></h3><ul>
+<li><h4 id="JDK和JRE有什么区别？"><a href="#JDK和JRE有什么区别？" class="headerlink" title="JDK和JRE有什么区别？"></a>JDK和JRE有什么区别？</h4><ul>
+<li>JDK:Java Development Kit 的简称，Java开发工具包，提供了Java的开发环境和运行环境。</li>
+<li>JRE:Java Runtime Environment 的简称，Java运行环境，为Java提供了所需环境。<br>具体来说JDK其实包含JRE，同时还包含了编译Java源码的编译器javac，还包含了很多java程序调试和分析的工具。简单来说：如果你需要运行java程序，只需要安装JRE就可以了，如果你需要编写java程序，需要安装JDK.</li>
+</ul>
+</li>
+<li><h4 id="与-equals-的区别是什么？"><a href="#与-equals-的区别是什么？" class="headerlink" title="== 与 equals 的区别是什么？"></a>== 与 equals 的区别是什么？</h4><ul>
+<li><strong>==解读</strong></li>
+</ul>
+<ul>
+<li>对于基本类型和应用类型==的作用效果是不同的，如下所示：<ul>
+<li>基本类型：比较的是值是否相同；</li>
+<li>应用类型：比较的是引用是否相同；</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>代码示例：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String x = &quot;string&quot;;</span><br><span class="line">String y = &quot;string&quot;;</span><br><span class="line">String z = new String(&quot;string&quot;);</span><br><span class="line">System.out.println(x == y);//true </span><br><span class="line">System.out.println(x == z);//false</span><br><span class="line">System.out.println(x.equals(y));//true</span><br><span class="line">System.out.println(x.equals(z));//true</span><br></pre></td></tr></table></figure></li>
+<li><p>代码解读：因为x和y指向的是同一个引用，所以==也是true，而new String（）方法则重写开辟了内存空间，所以==结果为false，而equals比较的一直是值，所以结果都为true</p>
+</li>
+<li><p><strong>equals 解读</strong></p>
+</li>
+</ul>
+<ul>
+<li>equals本质上就是==，只不过String 和 Integer 等重写了equals方法，把它变成了值比较。看下面的代码就明白了。</li>
+<li>首先来看默认情况写equals比较一个有相同值得对象，代码如下：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class Cat &#123;</span><br><span class="line"> String name;</span><br><span class="line"></span><br><span class="line"> public String getName() &#123;</span><br><span class="line">  return name;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> public void setName(String name) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line"> &#125;</span><br><span class="line">	</span><br><span class="line"> public Cat(String name) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line"> &#125;</span><br><span class="line"> public static void main(String[] args) &#123;</span><br><span class="line">  Cat c1 = new Cat(&quot;小马&quot;);</span><br><span class="line">  Cat c2 = new Cat(&quot;小马&quot;);</span><br><span class="line">  System.out.println(c1.equals(c2));</span><br><span class="line"> &#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><p>输出结果出乎我们的意料，竟然是false？这是怎么回事，看了equals源码就知道了，源码如下：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public boolean equals（Object obj)&#123;</span><br><span class="line">    return (this == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>原来equals本质上就是==.</p>
+</li>
+<li><p>那么问题来了，两个相同值的String对象，为什么返回的是true？代码如下：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s1 = new String(&quot;老马&quot;);</span><br><span class="line">String s2 = new String(&quot;老马&quot;);</span><br><span class="line">System.out.println(s1.equals(s2));//true</span><br></pre></td></tr></table></figure></li>
+<li><p>同样的，当我们进入String的equals方法，找到了答案，代码如下：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public boolean equals(Object anObject) &#123;</span><br><span class="line">    if (this == anObject) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    if (anObject instanceof String) &#123;</span><br><span class="line">        String anotherString = (String)anObject;</span><br><span class="line">        int n = value.length;</span><br><span class="line">        if (n == anotherString.value.length) &#123;</span><br><span class="line">            char v1[] = value;</span><br><span class="line">            char v2[] = anotherString.value;</span><br><span class="line">            int i = 0;</span><br><span class="line">            while (n-- != 0) &#123;</span><br><span class="line">                if (v1[i] != v2[i])</span><br><span class="line">                    return false;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>原来是String重写Object的equals方法，把引用比较该称号了值比较。</p>
+</li>
+<li><p>总结：==对于基本类型来说是值比较，对于引用来行来说是比较的应用；而equals默认情况下是引用比较，只是很多类重写了equals方法，比如String、Integer等把它变成了值比较，所以一般情况下equals比较的是值是否相等。</p>
+</li>
+</ul>
+</li>
+<li><h4 id="两个对象的hashCode-相同，则equals-也一定为true，对吗？"><a href="#两个对象的hashCode-相同，则equals-也一定为true，对吗？" class="headerlink" title="两个对象的hashCode() 相同，则equals()也一定为true，对吗？"></a>两个对象的hashCode() 相同，则equals()也一定为true，对吗？</h4><ul>
+<li>不对，两个对象的hashcode（）相同，equals（）不一定为true。<br>代码示例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String str1 = &quot;通话&quot;;</span><br><span class="line">String str2 = &quot;重地&quot;;</span><br><span class="line">System.out.println(String.format(&quot;str1：%d | str2：%d&quot;, str1.hashCode(), str2.hashCode());</span><br><span class="line">System.out.println(str1.equals(str2));</span><br></pre></td></tr></table></figure></li>
+<li>执行的结果：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str1：1179395 | str2:1179395</span><br><span class="line">false</span><br></pre></td></tr></table></figure></li>
+<li>代码解读：很显然“通话”和“重地”的hashcode（）相同，然而equals（）则为false，因为在散列表中，hashcode（）相等即两个键值对的哈希值相等，然后阿哈希值相等，并不一定得出键值对相等。</li>
+</ul>
+</li>
+<li><h4 id="final在java中有什么作用？"><a href="#final在java中有什么作用？" class="headerlink" title="final在java中有什么作用？"></a>final在java中有什么作用？</h4><ul>
+<li>final修饰的类叫最终类，该类不能被继承。</li>
+<li>final修饰的方法不能被重写。</li>
+<li>final修饰的变量叫常量，常量必须初始化，初始化之后值就不能改变。</li>
+</ul>
+</li>
+<li><h4 id="String属于基础的数据类型吗？"><a href="#String属于基础的数据类型吗？" class="headerlink" title="String属于基础的数据类型吗？"></a>String属于基础的数据类型吗？</h4><ul>
+<li>String 不属于基础类型，基础类型有 8 种：byte、boolean、char、short、int、float、long、double，而 String 属于对象。</li>
+</ul>
+</li>
+<li><h4 id="String-StringBuffer-StringBuilder的区别是什么？String为什么是不可变的？"><a href="#String-StringBuffer-StringBuilder的区别是什么？String为什么是不可变的？" class="headerlink" title="String, StringBuffer, StringBuilder的区别是什么？String为什么是不可变的？"></a>String, StringBuffer, StringBuilder的区别是什么？String为什么是不可变的？</h4><ul>
+<li>1、String是字符串常量，StringBuffer和StringBuilder都是字符串变量。后两者的字符内容可变，而前者创建后内容不可变。</li>
+<li>2、String不可变是因为在JDK中String类被声明为一个final类。</li>
+<li>3、StringBuffer是线程安全的，而StringBuilder是非线程安全的。</li>
+<li><strong>补充说明：</strong>线程安全会带来额外的系统开销，所以StringBuilder的效率比StringBuffer高。如果对系统中的线程是否安全很掌握，可用StringBuffer，在线程不安全处加上关键字Synchronize。</li>
+</ul>
+</li>
+<li><h4 id="java中的Math-round-1-5-等于多少？"><a href="#java中的Math-round-1-5-等于多少？" class="headerlink" title="java中的Math.round(-1.5)等于多少？"></a>java中的Math.round(-1.5)等于多少？</h4><ul>
+<li>等于-1，以为在数轴上取值时，中间值（0.5)向右取整，负0.5是直接舍弃。</li>
+</ul>
+</li>
+<li><h4 id="String属于基础的数据类型吗？-1"><a href="#String属于基础的数据类型吗？-1" class="headerlink" title="String属于基础的数据类型吗？"></a>String属于基础的数据类型吗？</h4><ul>
+<li>String不属于基础类型，基础类型有8种：byte字节型、short短整型、int整形、long长整型、float单精度浮点型、double双精度浮点型、char字符型、Boolean布尔值，而String属于对象。</li>
+</ul>
+</li>
+<li><h4 id="java中操作字符串的都有哪些？它们之间-有什么区别？"><a href="#java中操作字符串的都有哪些？它们之间-有什么区别？" class="headerlink" title="java中操作字符串的都有哪些？它们之间 有什么区别？"></a>java中操作字符串的都有哪些？它们之间 有什么区别？</h4><ul>
+<li>操作字符串的类有：String、StringBuffer、StringBuilder。<br>String和Stringbuffer、StringBuilder的区别在于String声明的是不可变的对象，每次操作都谁生成新的String对象，然后将指针指向新的String对象，而StringBuffer、StringBuilder可以在原有对象的基础上进行操作，所以在经常改变字符串内容的情况下最好不要使用String。</li>
+<li>StringBuffer和StringBuilder最大的区别在于，StringBuffer是线程安全的，而StringBuilder是非线程安全的，但是StringBuilder的性能却高于StringBuffer，所以在单线程环境下推荐使用StringBuilder，多线程环境下推荐使用StringBuffer。 </li>
+</ul>
+</li>
+<li><h4 id="String-str-“i”-与-String-str-new-String-“i”-一样吗？"><a href="#String-str-“i”-与-String-str-new-String-“i”-一样吗？" class="headerlink" title="String str = “i” 与 String str = new String(“i”)一样吗？"></a>String str = “i” 与 String str = new String(“i”)一样吗？</h4><ul>
+<li>不一样，因为内存分配方式不一样。String str = “i”的方式，java虚拟机会将其非配到常量池中；而String str = new String(“i”)则会本分配到堆内存中。 </li>
+</ul>
+</li>
+<li><h4 id="如何将字符串反转？"><a href="#如何将字符串反转？" class="headerlink" title="如何将字符串反转？"></a>如何将字符串反转？</h4><ul>
+<li>使用StringBuffer或者StringBuilder的reverse()方法。<br>示例代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// StringBuffer reverse</span><br><span class="line">StringBuffer stringBuffer = new StringBuffer();</span><br><span class="line">stringBuffer.append(&quot;abcdefg&quot;);</span><br><span class="line">System.out.println(stringBuffer.reverse()); // gfedcba</span><br><span class="line">// StringBuilder reverse</span><br><span class="line">StringBuilder stringBuilder = new StringBuilder();</span><br><span class="line">stringBuilder.append(&quot;abcdefg&quot;);</span><br><span class="line">System.out.println(stringBuilder.reverse()); // gfedcba</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h4 id="String类的常用方法都有哪些？"><a href="#String类的常用方法都有哪些？" class="headerlink" title="String类的常用方法都有哪些？"></a>String类的常用方法都有哪些？</h4><ul>
+<li>indexOf():返回指定字符的索引。</li>
+<li>charAt():返回指定索引处的字符。</li>
+<li>replace():字符串替换。</li>
+<li>trim():去除字符串两端空白。</li>
+<li>split():分割字符串，返回一个分割后的字符串数组。</li>
+<li>getBytes():返回字符富川的byte类型数组。</li>
+<li>length():返回字符串长度。</li>
+<li>toLowerCase():将字符串转成小写字母。</li>
+<li>toUpperCase():将字符串转成大写字母。</li>
+<li>subString():截取字符串。</li>
+<li>equals():字符串比较。</li>
+</ul>
+</li>
+<li><h4 id="抽象类必须要有抽象方法吗？"><a href="#抽象类必须要有抽象方法吗？" class="headerlink" title="抽象类必须要有抽象方法吗？"></a>抽象类必须要有抽象方法吗？</h4><ul>
+<li>不需要，抽象类不一定非要有抽象方法。示例代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">abstract class Cat &#123;</span><br><span class="line">    public static void sayHi() &#123;</span><br><span class="line">        System.out.println(&quot;hi~&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+上面代码，抽象类并没有抽象方法但完全可以正常运行。</li>
+</ul>
+</li>
+<li><h4 id="普通类和抽象类有哪些区别？"><a href="#普通类和抽象类有哪些区别？" class="headerlink" title="普通类和抽象类有哪些区别？"></a>普通类和抽象类有哪些区别？</h4><ul>
+<li>普通类不能包含抽象方法，抽象类可以包含抽象方法。</li>
+<li>抽象类不能直接实例化，普通类可以直接实例化。</li>
+</ul>
+</li>
+<li><h4 id="抽象类能使用final修饰吗？"><a href="#抽象类能使用final修饰吗？" class="headerlink" title="抽象类能使用final修饰吗？"></a>抽象类能使用final修饰吗？</h4><ul>
+<li>不能，定义抽象类就是让其他类继承的，如果定义为final该类就不能被继承，这样批次就会产生矛盾，所以final不能修饰抽象类。测试如下：The class Test can be either abstract or final, not both</li>
+</ul>
+</li>
+<li><h4 id="接口和抽象类有什么区别？"><a href="#接口和抽象类有什么区别？" class="headerlink" title="接口和抽象类有什么区别？"></a>接口和抽象类有什么区别？</h4><ul>
+<li>实现：抽象类的子类使用extends来继承；接口必须使用implements来实现接口。</li>
+<li>构造函数：抽象类可以有构造函数；接口不能有；</li>
+<li>main方法：抽象类可以有main方法，并且我们能运行它；jdk1.8以下（不包含1.8）接口不能有main方法。jdk1.8及以上可以有main方法，并且可以运行。</li>
+<li>实现数量：类可以实现多个接口，但是只能继承一个抽象类。</li>
+<li>访问修饰符：接口中的方法默认是public修饰；抽象类中的方法可以是任意修饰符。</li>
+<li>注意：接口访问修饰符只允许public、abstract、default、static和strickfp。</li>
+</ul>
+</li>
+<li><h4 id="java中IO流分为几种"><a href="#java中IO流分为几种" class="headerlink" title="java中IO流分为几种"></a>java中IO流分为几种</h4><ul>
+<li>按功能来分：输入流(input)、输出流(output)</li>
+<li>按类型来分：字节流和字符流</li>
+<li>字节流和字符流的区别是：字节流按8位传输以字节为单位输入输出数据，字符流按16位传输以字符位单位输入输出数据。</li>
+</ul>
+</li>
+<li><h4 id="BIO、NIO、AIO有什么区别？"><a href="#BIO、NIO、AIO有什么区别？" class="headerlink" title="BIO、NIO、AIO有什么区别？"></a>BIO、NIO、AIO有什么区别？</h4><ul>
+<li>BIO：Block IO 同步阻塞式IO,就是我们平常使用的传统IO,它的特点是模式简单使用方便，并发处理能力低。</li>
+<li>NIO：New IO 同步非阻塞IO，是传统IO的升级，客户端和服务器端通过Channel(通道)通讯，实现了多路复用。</li>
+<li>AIO：Asynchronous IO是NIO的升级，也叫NIO2，实现了异步非堵塞IO,异步IO的操作基于事件和回调机制。</li>
+</ul>
+</li>
+<li><h4 id="Files的常用方法都有哪些？"><a href="#Files的常用方法都有哪些？" class="headerlink" title="Files的常用方法都有哪些？"></a>Files的常用方法都有哪些？</h4><ul>
+<li>Files.exists(path, options);//检测文件路径是否存在</li>
+<li>Files.createFile(path, attrs);//创建文件</li>
+<li>Files.createDirectory(dir, attrs);//创建文件夹</li>
+<li>Files.delete(path);//删除一个文件或目录</li>
+<li>Files.copy(source, out);//复制文件</li>
+<li>Files.move(source, target, options);//移动文件</li>
+<li>Files.size(path);//查看文件个数</li>
+<li>Files.read();//读取文件</li>
+<li>Files.write(path, bytes, options);//写入文件</li>
+</ul>
+</li>
+<li><h4 id="Java容器都有哪些？"><a href="#Java容器都有哪些？" class="headerlink" title="Java容器都有哪些？"></a>Java容器都有哪些？</h4><ul>
+<li>collection <ul>
+<li>List:Vector/ArrayList/LinkedList</li>
+<li>Queue:PriorityQueue</li>
+<li>Set:HashSet/TreeSet</li>
+</ul>
+</li>
+<li>Map<ul>
+<li>HashMap</li>
+<li>TreeMap</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="Collection-和-Collections-有什么区别？"><a href="#Collection-和-Collections-有什么区别？" class="headerlink" title="Collection 和 Collections 有什么区别？"></a>Collection 和 Collections 有什么区别？</h4><ul>
+<li>java.util.Collection是一个集合接口(集合类的一个顶级接口)。它提供了对集合对象进行基本操作的通用接口方法。Collection接口在Java类库中有很多具体的实现。Collection接口的意义是为各种具体比的集合提供了最大化的同意操作方式，其直接继承接口有List和Set。</li>
+<li>Collections则是集合类的一个工具类/帮助类，其中提供了一些列静态方法，用于对集合中元素进行排序、搜索以及线程安全等各种操作。</li>
+</ul>
+</li>
+<li><h4 id="抽象类必须要有抽象抽象方法吗？"><a href="#抽象类必须要有抽象抽象方法吗？" class="headerlink" title="抽象类必须要有抽象抽象方法吗？"></a>抽象类必须要有抽象抽象方法吗？</h4><ul>
+<li>不需要，抽象类不一定非要有抽象方法。示例代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">abstract class Cat &#123;</span><br><span class="line">    public static void sayHi() &#123;</span><br><span class="line">        System.out.println(&quot;hi~&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+上面代码，抽象类并没有抽象方法但完全可以正常运行。</li>
+</ul>
+</li>
+<li><h4 id="普通类和抽象类有哪些区别？-1"><a href="#普通类和抽象类有哪些区别？-1" class="headerlink" title="普通类和抽象类有哪些区别？"></a>普通类和抽象类有哪些区别？</h4><ul>
+<li>普通类不能包含抽象方法，抽象类可以包含抽象方法。</li>
+<li>抽象类不能直接实例化，普通类可以直接实例化。</li>
+</ul>
+</li>
+<li><h4 id="抽象类能使用final修饰吗？-1"><a href="#抽象类能使用final修饰吗？-1" class="headerlink" title="抽象类能使用final修饰吗？"></a>抽象类能使用final修饰吗？</h4><ul>
+<li>不能，定义抽象类就是让其他类继承的，如果定义为final该类就不能被继承，这样批次就会产生矛盾，所以final不能修饰抽象类。</li>
+<li>测试如下：The class Test can be either abstract or final, not both</li>
+</ul>
+</li>
+<li><h4 id="接口和抽象类有什么区别？-1"><a href="#接口和抽象类有什么区别？-1" class="headerlink" title="接口和抽象类有什么区别？"></a>接口和抽象类有什么区别？</h4><ul>
+<li>实现：抽象类的子类使用extends来继承；接口必须使用implements来实现接口。</li>
+<li>构造函数：抽象类可以有构造函数；接口不能有；</li>
+<li>main方法：抽象类可以有main方法，并且我们能运行它；jdk1.8以下（不包含1.8）接口不能有main方法。jdk1.8及以上可以有main方法，并且可以运行。</li>
+<li>实现数量：类可以实现多个接口，但是只能继承一个抽象类。</li>
+<li>访问修饰符：接口中的方法默认是public修饰；抽象类中的方法可以是任意修饰符。</li>
+<li><strong>注意</strong>：接口访问修饰符只允许public、abstract、default、static和strickfp。</li>
+</ul>
+</li>
+<li><h4 id="java中IO流分为几种？"><a href="#java中IO流分为几种？" class="headerlink" title="java中IO流分为几种？"></a>java中IO流分为几种？</h4><ul>
+<li>按功能来分：输入流(input)、输出流(output)</li>
+<li>按类型来分：字节流和字符流</li>
+<li>字节流和字符流的区别是：字节流按8位传输以字节为单位输入输出数据，字符流按16位传输以字符位单位输入输出数据。</li>
+</ul>
+</li>
+<li><h4 id="BIO-NIO-AIO有什么区别？"><a href="#BIO-NIO-AIO有什么区别？" class="headerlink" title="BIO/NIO/AIO有什么区别？"></a>BIO/NIO/AIO有什么区别？</h4><ul>
+<li>BIO：Block IO 同步阻塞式IO,就是我们平常使用的传统IO,它的特点是模式简单使用方便，并发处理能力低。</li>
+<li>NIO：New IO 同步非阻塞IO，是传统IO的升级，客户端和服务器端通过Channel(通道)通讯，实现了多路复用。</li>
+<li>AIO：Asynchronous IO是NIO的升级，也叫NIO2，实现了异步非堵塞IO,异步IO的操作基于事件和回调机制。</li>
+</ul>
+</li>
+<li><h4 id="Files的常用方法都有哪些？-1"><a href="#Files的常用方法都有哪些？-1" class="headerlink" title="Files的常用方法都有哪些？"></a>Files的常用方法都有哪些？</h4><ul>
+<li>Files.exists(path, options);//检测文件路径是否存在</li>
+<li>Files.createFile(path, attrs);//创建文件</li>
+<li>Files.createDirectory(dir, attrs);//创建文件夹</li>
+<li>Files.delete(path);//删除一个文件或目录</li>
+<li>Files.copy(source, out);//复制文件</li>
+<li>Files.move(source, target, options);//移动文件</li>
+<li>Files.size(path);//查看文件个数</li>
+<li>Files.read();//读取文件</li>
+<li>Files.write(path, bytes, options);//写入文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><ul>
+<li><h4 id="Java常用的容器有哪些？"><a href="#Java常用的容器有哪些？" class="headerlink" title="Java常用的容器有哪些？"></a>Java常用的容器有哪些？</h4><ul>
+<li>collection <ul>
+<li>List:Vector/ArrayList/LinkedList</li>
+<li>Queue:PriorityQueue</li>
+<li>Set:HashSet/TreeSet</li>
+</ul>
+</li>
+<li>Map<ul>
+<li>HashMap</li>
+<li>TreeMap</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="collection-和-collections-有什么区别？"><a href="#collection-和-collections-有什么区别？" class="headerlink" title="collection 和 collections 有什么区别？"></a>collection 和 collections 有什么区别？</h4><ul>
+<li>java.util.Collection是一个集合接口(集合类的一个顶级接口)。它提供了对集合对象进行基本操作的通用接口方法。Collection接口在Java类库中有很多具体的实现。Collection接口的意义是为各种具体比的集合提供了最大化的同意操作方式，其直接继承接口有List和Set。</li>
+<li>Collections则是集合类的一个工具类/帮助类，其中提供了一些列静态方法，用于对集合中元素进行排序、搜索以及线程安全等各种操作。</li>
+</ul>
+</li>
+<li><h4 id="HashMap-和-HashTable-有什么区别？"><a href="#HashMap-和-HashTable-有什么区别？" class="headerlink" title="HashMap 和 HashTable 有什么区别？"></a>HashMap 和 HashTable 有什么区别？</h4><ul>
+<li>HashMap去掉了HashTable的contains方法，但是添加上了containsKey()方法和containsValue()方法。</li>
+<li>HashTable是同步的，HashMap是非同步的，效率上HashMap更快。</li>
+<li>HashMap允许空键值，HashTable不允许。</li>
+</ul>
+</li>
+<li><h4 id="HashTable-HashMap，-TreeMap的区别是什么？"><a href="#HashTable-HashMap，-TreeMap的区别是什么？" class="headerlink" title="HashTable, HashMap， TreeMap的区别是什么？"></a>HashTable, HashMap， TreeMap的区别是什么？</h4><ol>
+<li>HashTable线程同步，HashMap非线程同步。</li>
+<li>HashTable不允许&lt;键,值&gt;有空值，HashMap允许&lt;键,值&gt;有空值。</li>
+<li>HashTable使用Enumeration，HashMap使用Iterator。</li>
+<li>HashTable中hash数组的默认大小是11，增加方式的old*2+1，HashMap中hash数组的默认大小是16，增长方式一定是2的指数倍。</li>
+<li>TreeMap能够把它保存的记录根据键排序，默认是按升序排序。</li>
+</ol>
+<p>  <strong>注意：</strong>以上三个问题所涉及的都是Java语言中的一些比较高级的数据结构，从字符串相关到容器再到哈希表和树等数据结构，因此我们在学习Java语言的时候，也需要更加深入地去对比比较类似的数据结构的使用场景以及其优缺点。</p>
+</li>
+<li><h4 id="如何决定使用HasMap还是TreeMap"><a href="#如何决定使用HasMap还是TreeMap" class="headerlink" title="如何决定使用HasMap还是TreeMap?"></a>如何决定使用HasMap还是TreeMap?</h4><ul>
+<li>对于map的插入、删除、定位元素这类操作，HashMap是最好的选择。然而，假如你需要对一个有序的key集合进行遍历，TreeMap是更好的选择。除此之外，由于HashMap有更好的性能，所以大多不需要排序的时候我们会使用HashMap。</li>
+</ul>
+</li>
+<li><h4 id="说一下HashMap的实现原理？"><a href="#说一下HashMap的实现原理？" class="headerlink" title="说一下HashMap的实现原理？"></a>说一下HashMap的实现原理？</h4><ul>
+<li>HashMap概述：HashMap是基于哈希表的map的非同步实现。此实现提供所有的可选的映射操作，允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。</li>
+<li>HashMap的数据结构：在java编程语言中，最基本的结构就是两种，一个是数组，另一个是模拟指针(引用)，所有的数据结构都可以用这两个基本结构来构造。HashMap也不例外，HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。</li>
+<li>当我们往HashMap中put元素时，首先根据key的hashCode重新计算hash值，根据这个hash值得到这个元素在数组中位置(下标)。如果该数组已经在该位置存放了元素，那么在这个位置上的元素将以链表形式存放，新加入的放在链头，最先加入的放入链尾。如果数组中该位置没有元素，就直接将该元素放到数组的该位置上。</li>
+<li>需要注意的是jdk1.8对hashMap的实现进行了优化。当链表中的节点数据超过八个之后，该链表会转为红黑树来提高查询效率，从原来的O(n)到O(logn)。</li>
+</ul>
+</li>
+<li><h4 id="说一下HashSet的实现原理？"><a href="#说一下HashSet的实现原理？" class="headerlink" title="说一下HashSet的实现原理？"></a>说一下HashSet的实现原理？</h4><ul>
+<li>HashSet的底层由HashMap实现。</li>
+<li>HashSet的值存放在HashMap的key上。</li>
+<li>HashMap的值统一为PRESENT</li>
+</ul>
+</li>
+<li><h4 id="ArrayList-和-LinkedList-的区别是什么？"><a href="#ArrayList-和-LinkedList-的区别是什么？" class="headerlink" title="ArrayList 和 LinkedList 的区别是什么？"></a>ArrayList 和 LinkedList 的区别是什么？</h4><ul>
+<li>最明显的区别是ArrayList底层的数据结构是数组，支持随机访问，而LinkedList的底层数据结构是双向循环列表，不支持随机访问。</li>
+<li>使用下标访问一个元素，ArrayList的时间复杂度是O(1)而LinkedList的时间复杂度是O(n)。</li>
+</ul>
+</li>
+<li><h4 id="Vector-ArrayList-LinkedList的区别是什么？"><a href="#Vector-ArrayList-LinkedList的区别是什么？" class="headerlink" title="Vector, ArrayList, LinkedList的区别是什么？"></a>Vector, ArrayList, LinkedList的区别是什么？</h4><ol>
+<li>Vector、ArrayList都是以类似数组的形式存储在内存中，LinkedList则以链表的形式进行存储。</li>
+<li>List中的元素有序、允许有重复的元素，Set中的元素无序、不允许有重复元素。</li>
+<li>Vector线程同步，ArrayList、LinkedList线程不同步。</li>
+<li>LinkedList适合指定位置插入、删除操作，不适合查找；ArrayList、Vector适合查找，不适合指定位置的插入、删除操作。</li>
+<li>ArrayList在元素填满容器时会自动扩充容器大小的约50%，而Vector则是100%，因此ArrayList更节省空间。</li>
+</ol>
+</li>
+<li><h4 id="如何实现数组和List之间之间的转换？"><a href="#如何实现数组和List之间之间的转换？" class="headerlink" title="如何实现数组和List之间之间的转换？"></a>如何实现数组和List之间之间的转换？</h4><ul>
+<li>list转换成数组：调用ArrayList的toArray()方法。</li>
+<li>数组转换为list：调用Arrays的asList()方法。</li>
+</ul>
+</li>
+<li><h4 id="ArrayList-和-Vector-的区别是什么？"><a href="#ArrayList-和-Vector-的区别是什么？" class="headerlink" title="ArrayList 和 Vector 的区别是什么？"></a>ArrayList 和 Vector 的区别是什么？</h4><ul>
+<li>Vector是同步的，而ArrayList不是。然而，如果你寻求在迭代的时候对列表进行改变，你应该使用CopyOnWriteArrayList。</li>
+<li>ArrayList运行效率比Vector更快，Vector是线程安全的。</li>
+<li>ArrayList更加通用，因为我们可以使用conllections工具类轻易的获取同步列表和只读列表。</li>
+</ul>
+</li>
+<li><h4 id="Array-和-ArrayList-有何区别？"><a href="#Array-和-ArrayList-有何区别？" class="headerlink" title="Array 和 ArrayList 有何区别？"></a>Array 和 ArrayList 有何区别？</h4><ul>
+<li>Array可以容纳基本类型和对象，而ArrayList只能容纳对象。</li>
+<li>Array是指定大小的，而ArrayList大小是固定的。</li>
+<li>Array没有提供ArrayList那么多功能，比如addAll和removeAll和iterator等。</li>
+</ul>
+</li>
+<li><h3 id="在queue中poll-和remove-有何区别？"><a href="#在queue中poll-和remove-有何区别？" class="headerlink" title="在queue中poll()和remove()有何区别？"></a>在queue中poll()和remove()有何区别？</h3><ul>
+<li>poll()和remove()都是从队列中取出一个元素，但是poll()在获取元素失败的时候回返回空，但是remove()失败的时候会抛出异常。</li>
+</ul>
+</li>
+<li><h4 id="哪些集合是线程安全的？"><a href="#哪些集合是线程安全的？" class="headerlink" title="哪些集合是线程安全的？"></a>哪些集合是线程安全的？</h4><ul>
+<li>vector：就比ArrayList多了一个同步化机制(线程安全)，因为效率太低，现在已经不太建议使用。在web应用中，特别是前台页面，往往效率(页面响应速度)是优先考虑的。</li>
+<li>statck：堆栈类，先进后出。</li>
+<li>hashTable：比HashMap多了一个线程安全。</li>
+<li>enumeration：枚举，相当于迭代器。</li>
+</ul>
+</li>
+<li><h4 id="迭代器Iterator是什么？"><a href="#迭代器Iterator是什么？" class="headerlink" title="迭代器Iterator是什么？"></a>迭代器Iterator是什么？</h4><ul>
+<li>迭代器是一种设计模式，它是一个对象，它可以遍历并选择序列中的对象，而开发人员不需要了解该序列的底层结构。迭代器通常称为“轻量级”对象，因为创建它的代价小。</li>
+</ul>
+</li>
+<li><h4 id="Iterator怎么使用？有什么特点？"><a href="#Iterator怎么使用？有什么特点？" class="headerlink" title="Iterator怎么使用？有什么特点？"></a>Iterator怎么使用？有什么特点？</h4><ul>
+<li>java中Iterator功能比较简单，只能单向移动：<ul>
+<li>使用方法iterator()要求容器返回一个Iterator。第一次调用Iterator的next()方法时，它返回序列的第一个元素。注意：iterator()是java.lang.Iterable接口，被Conllection继承。</li>
+<li>使用next()获取序列中的下一个元素。</li>
+<li>使用hasNext()检查序列中是否还有元素。</li>
+<li>使用remove()将迭代器新返回的元素删除。</li>
+</ul>
+</li>
+<li>Iterator是Java迭代器最简单的实现，为List设计的ListIterator具有更多功能，它可以从两个方向遍历list<br>，也可以从list中插入和删除元素。</li>
+</ul>
+</li>
+<li><h4 id="Iterator-和-ListIterator-有什么区别？"><a href="#Iterator-和-ListIterator-有什么区别？" class="headerlink" title="Iterator 和 ListIterator 有什么区别？"></a>Iterator 和 ListIterator 有什么区别？</h4><ul>
+<li>Iteroter可以遍历Set和List集合，而ListIterotor只能遍历List。</li>
+<li>Iterotor对集合只能前向遍历，ListIterotor既可以前向也可以后向。</li>
+<li>ListIterotor实现了Iterotor接口，并包含其他的功能，比如：增加元素，替换元素，获取前一个或后一个元素的索引等等。</li>
+</ul>
+</li>
+</ul>
+</div><div class="tags"></div><div class="post-nav"><a class="pre" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8BJAVA%E8%BF%9B%E9%98%B6%E7%AF%87/">互联网求职——Java进阶</a><a class="next" href="/2019/11/22/%E5%85%B6%E4%BB%96%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/">其他面试题汇总</a></div><div id="vcomment"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script><script>var notify = 'false' ? true : false;
+var verify = 'false' ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'HMCVMu79BXKku7a95jqPbsfq-gzGzoHsz',
+  appKey:'jvqP2PXthjron3FtNuTqIm8F',
+  placeholder:'Just so so',
+  avatar:'mm',
+  guest_info:guest_info,
+  pageSize:'10'
+})</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C/">互联网求职</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87/">基础学习篇</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E8%AE%B0/">手记</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/11/26/Java%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7-Junit/">单元测试工具-Junit</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/DOS%E5%91%BD%E4%BB%A4/">DOS常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/%E6%AF%8F%E5%A4%A9%E4%B8%80%E6%A2%97/">每天一梗</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/23/Redis%E5%85%A5%E9%97%A8%E7%AF%87/">Redis入门篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/23/%E6%AF%8F%E6%97%A5%E5%B7%A5%E4%BD%9C%E5%86%85%E5%AE%B9%E6%B8%85%E5%8D%95/">每日工作内容清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/23/IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">IDEA使用记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E4%B9%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">互联网求职——设计模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8B%E4%B8%AD%E9%97%B4%E4%BB%B6/">互联网求职——中间件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E9%A1%B9%E7%9B%AE%E7%AF%87/">互联网求职——项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8BLinux%E7%AF%87/">互联网求职——LINUX</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">XiexjCoder Blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

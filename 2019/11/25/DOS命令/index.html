@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="个人技术博客"><title>DOS常用命令 | XiexjCoder Blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.0/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><meta name="generator" content="Hexo 4.0.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">DOS常用命令</h1><a id="logo" href="/.">XiexjCoder Blog</a><p class="description">如果你不能把它简单地解释出来，那说明你还没有很好的理解它</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">DOS常用命令</h1><div class="post-meta">Nov 25, 2019<span> | </span><span class="category"><a href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87/">基础学习篇</a></span><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a class="disqus-comment-count" href="/2019/11/25/DOS%E5%91%BD%E4%BB%A4/#vcomment"><span class="valine-comment-count" data-xid="/2019/11/25/DOS%E5%91%BD%E4%BB%A4/"></span><span> 条评论</span></a><div class="post-content"><h1 id="DOS常用命令："><a href="#DOS常用命令：" class="headerlink" title="DOS常用命令："></a>DOS常用命令：</h1><ul>
+<li><p>ping </p>
+<ul>
+<li>使用格式：ping+空格键+地址+命令参数<ol>
+<li>经典用法一：检查网速状态的好坏（这里指的是网络延时的高低，不是下载速度。）</li>
+</ol>
+<ul>
+<li>格式：输入ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> -t,输入完成之后敲击键盘的回车键来执行输入的命令。</li>
+<li>命令解释：-t参数代表的是循环执行这条命令，如果不加-t的话就执行4条命令行之后就自动终止。我们重点看时间=多少毫秒。这个值越高说明你的网络越不稳定，网络延时就高。当你打开网页的时候就比较慢。所以延时越低越好，最好是10毫秒以下。还有一种情况是数据丢包，隔一行出一次数据。比如说我们打游戏的时候，就是对那种延时特别敏感的游戏。丢2个数据包就可以感觉出来，症状就是你本来点击鼠标操作了但在游戏里面没有反馈出你的操作，这就是明显的数据丢包。</li>
+</ul>
+<ol start="2">
+<li>经典用法二：检查IP地址的连通性和判断外网状态。</li>
+</ol>
+<ul>
+<li>格式：输入ping IP地址 -t，输入完成之后敲击键盘上的回车键。</li>
+<li>首先我们控制面板找到网络连接然后查看本地连接—&gt;- 进入本地连接—&gt; 详细信息—&gt; 查看本机ip以及路由网关</li>
+<li>192.168.1.1这个地址是你路由器网关的ip地址。如果我们的电脑无法上网了，就用命令去ping网关的地址查看连通的状态。</li>
+<li>命令行说明：小于1毫秒说明是局域网状态。来自192.168.1.1的回复：字节、时间等信息说明本地网卡的网线连接到路由器这段是连通的状态，如果不是上面的信息请检测网线是否存在问题。如果本机到路由器连通了还是不能连接外网，说明路由器本身故障或者网络供应商故障。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>dir </p>
+<ul>
+<li>显示指定路径上所有文件或目录的信息</li>
+<li>格式为”dir [盘符：][路径][文件名] [参数]”，比如”DIR D:\source”</li>
+</ul>
+</li>
+<li><p>md(mkdir)</p>
+<ul>
+<li>建立目录</li>
+<li>格式为”md [盘符][路径]”，例如”MD test”</li>
+</ul>
+</li>
+<li><p>rd(rmdir)</p>
+<ul>
+<li>删除目录</li>
+<li>格式为”RD [盘符][路径]”。</li>
+<li>注意：该命令只能删除空目录，并且不能删除当前目录。</li>
+</ul>
+</li>
+<li><p>cd</p>
+<ul>
+<li>进入指定目录</li>
+<li>格式为” CD [路径]”，例如”CD HAPPY”。</li>
+<li>注意：只能进入当前盘符中的目录。其中”CD\”为回到根目录，”CD..”为回到上一层目录。</li>
+</ul>
+</li>
+<li><p>copy</p>
+<ul>
+<li>拷贝文件</li>
+<li>格式为”COPY [源目录或文件] [目的目录或文件]”，比如”COPY C:*.COM D:\”</li>
+<li>注意：使用该命令进行文件拷贝时，目的目录一定要存在。</li>
+</ul>
+</li>
+<li><p>del</p>
+<ul>
+<li>删除文件</li>
+<li>格式为”DEL [盘符][路径][文件名] [参数]”，比如”DEL C:\DATA*.BAK”。它有一个参数：”/P”，可以使用户在删除多个文件时对每个文件都显示删除询问</li>
+</ul>
+</li>
+<li><p>move</p>
+<ul>
+<li>移动文件，改目录名</li>
+<li>格式为”MOVE [盘符][路径]”。</li>
+</ul>
+</li>
+<li><p>ren(rename)</p>
+<ul>
+<li>改名</li>
+<li>格式为”REN [原名] [现名]”，7.0以后版本的DOS都支持对文件名和目录名的修改，而以前的DOS只能修改文件名。</li>
+</ul>
+</li>
+<li><p>cls</p>
+<ul>
+<li>清除显示器屏幕上的内容，使DOS提示符到屏幕左上角。</li>
+<li>[格式] cls</li>
+</ul>
+</li>
+<li><p>time  </p>
+<ul>
+<li>显示和设置DOS的系统时间</li>
+<li>[格式] time [hh[:mm[:ss[.cc]]]</li>
+</ul>
+</li>
+<li><p>date</p>
+<ul>
+<li>显示和设置DOS的系统日期</li>
+<li>[格式] date [MM-DD-YY]</li>
+</ul>
+</li>
+<li><p>ver</p>
+<ul>
+<li>显示正在运行的DOS系统版本号</li>
+<li>[格式] ver</li>
+</ul>
+</li>
+</ul>
+</div><div class="tags"></div><div class="post-nav"><a class="pre" href="/2019/11/26/Java%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7-Junit/">单元测试工具-Junit</a><a class="next" href="/2019/11/24/%E6%AF%8F%E5%A4%A9%E4%B8%80%E6%A2%97/">每天一梗</a></div><div id="vcomment"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script><script>var notify = 'false' ? true : false;
+var verify = 'false' ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'HMCVMu79BXKku7a95jqPbsfq-gzGzoHsz',
+  appKey:'jvqP2PXthjron3FtNuTqIm8F',
+  placeholder:'Just so so',
+  avatar:'mm',
+  guest_info:guest_info,
+  pageSize:'10'
+})</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C/">互联网求职</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87/">基础学习篇</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E8%AE%B0/">手记</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/11/26/Java%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7-Junit/">单元测试工具-Junit</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/DOS%E5%91%BD%E4%BB%A4/">DOS常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/%E6%AF%8F%E5%A4%A9%E4%B8%80%E6%A2%97/">每天一梗</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/23/Redis%E5%85%A5%E9%97%A8%E7%AF%87/">Redis入门篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/23/%E6%AF%8F%E6%97%A5%E5%B7%A5%E4%BD%9C%E5%86%85%E5%AE%B9%E6%B8%85%E5%8D%95/">每日工作内容清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/23/IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">IDEA使用记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E4%B9%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">互联网求职——设计模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8B%E4%B8%AD%E9%97%B4%E4%BB%B6/">互联网求职——中间件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E9%A1%B9%E7%9B%AE%E7%AF%87/">互联网求职——项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8BLinux%E7%AF%87/">互联网求职——LINUX</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">XiexjCoder Blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="个人技术博客"><title>互联网求职——Java进阶 | XiexjCoder Blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.0/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><meta name="generator" content="Hexo 4.0.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">互联网求职——Java进阶</h1><a id="logo" href="/.">XiexjCoder Blog</a><p class="description">如果你不能把它简单地解释出来，那说明你还没有很好的理解它</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">互联网求职——Java进阶</h1><div class="post-meta">Nov 22, 2019<span> | </span><span class="category"><a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C/">互联网求职</a></span><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a class="disqus-comment-count" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8BJAVA%E8%BF%9B%E9%98%B6%E7%AF%87/#vcomment"><span class="valine-comment-count" data-xid="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8BJAVA%E8%BF%9B%E9%98%B6%E7%AF%87/"></span><span> 条评论</span></a><div class="post-content"><h3 id="并发、多线程"><a href="#并发、多线程" class="headerlink" title="并发、多线程"></a><strong>并发、多线程</strong></h3><ul>
+<li><h4 id="线程同步，并发操作怎么控制？"><a href="#线程同步，并发操作怎么控制？" class="headerlink" title="线程同步，并发操作怎么控制？"></a>线程同步，并发操作怎么控制？</h4><p>  Java中可在方法名前加关键字syschronized来处理当有多个线程同时访问共享资源时候的问题。syschronized相当于一把锁，当有申请者申请该资源时，如果该资源没有被占用，那么将资源交付给这个申请者使用，在此期间，其他申请者只能申请而不能使用该资源，当该资源被使用完成后将释放该资源上的锁，其他申请者可申请使用。并发控制主要是为了多线程操作时带来的资源读写问题。如果不加以空间可能会出现死锁，读脏数据、不可重复读、丢失更新等异常。</p>
+<p>  并发操作可以通过加锁的方式进行控制，锁又可分为乐观锁和悲观锁。<br>  <strong>悲观锁：</strong><br>  悲观锁并发模式假定系统中存在足够多的数据修改操作，以致于任何确定的读操作都可能会受到由个别的用户所制造的数据修改的影响。也就是说悲观锁假定冲突总会发生，通过独占正在被读取的数据来避免冲突。但是独占数据会导致其他进程无法修改该数据，进而产生阻塞，读数据和写数据会相互阻塞。<br>  <strong>乐观锁：</strong><br>  乐观锁假定系统的数据修改只会产生非常少的冲突，也就是说任何进程都不大可能修改别的进程正在访问的数据。乐观并发模式下，读数据和写数据之间不会发生冲突，只有写数据与写数据之间会发生冲突。即读数据不会产生阻塞，只有写数据才会产生阻塞。<br>  <strong>注意：</strong>最后的几个问题又回到了Java内存模型以及进程、线程的底层知识上，其实无论是对于Java网络编程也好，还是对于Java框架的使用也好，这都离不开Java语言底层的技术支撑，因此了解底层知识是做好优化的重中之重。</p>
+</li>
+<li><h4 id="并行和并发有什么区别？"><a href="#并行和并发有什么区别？" class="headerlink" title="并行和并发有什么区别？"></a>并行和并发有什么区别？</h4><ul>
+<li>并行是指两个或者多个事件在同一时刻发生；而并发是指两个或多个事件在同一时间间隔发生。</li>
+<li>并行是在不同实体上的多个事件，并发是在同一实体上的多个事件。</li>
+<li>在一台处理器上“同时”处理多个任务，在多台处理器上同时处理多个任务。如hadoop分布式集群。</li>
+<li>所以并发编程的目标是充分的利用处理器的每一个核，以达到最高的处理性能。</li>
+</ul>
+</li>
+<li><h4 id="线程和进程有什么区别？"><a href="#线程和进程有什么区别？" class="headerlink" title="线程和进程有什么区别？"></a>线程和进程有什么区别？</h4><ul>
+<li>简而言之，进程是程序运行和资源分配的基本单位，一个程序至少有一个进程，一个进程至少有一个线程。<br>进程在执行过程中拥有独立的内存单元，而多个线程共享内存资源，减少切换次数，从而效率更高。<br>线程是进程的一个实体，是cpu调度和分派的基本单位，是比程序更小的能独立运行的基本单位。同一进程中的多个线程之间可以并发执行。</li>
+</ul>
+</li>
+<li><h4 id="守护线程是什么？"><a href="#守护线程是什么？" class="headerlink" title="守护线程是什么？"></a>守护线程是什么？</h4><ul>
+<li>守护线程（即daemon thread），是个服务线程，准确地来说就是服务其他的线程。</li>
+</ul>
+</li>
+<li><h4 id="创建线程有哪些方式？"><a href="#创建线程有哪些方式？" class="headerlink" title="创建线程有哪些方式？"></a>创建线程有哪些方式？</h4><p>  ①. 继承Thread类创建线程类<br>  定义Thread类的子类，并重写该类的run方法，该run方法的方法体就代表了线程要完成的任务。因此把run()方法称为执行体。<br>  创建Thread子类的实例，即创建了线程对象。<br>  调用线程对象的start()方法来启动该线程。<br>  ②. 通过Runnable接口创建线程类<br>  定义runnable接口的实现类，并重写该接口的run()方法，该run()方法的方法体同样是该线程的线程执行体。<br>  创建 Runnable实现类的实例，并依此实例作为Thread的target来创建Thread对象，该Thread对象才是真正的线程对象。<br>  调用线程对象的start()方法来启动该线程。<br>  ③. 通过Callable和Future创建线程<br>  创建Callable接口的实现类，并实现call()方法，该call()方法将作为线程执行体，并且有返回值。<br>  创建Callable实现类的实例，使用FutureTask类来包装Callable对象，该FutureTask对象封装了该Callable对象的call()方法的返回值。<br>  使用FutureTask对象作为Thread对象的target创建并启动新线程。<br>  调用FutureTask对象的get()方法来获得子线程执行结束后的返回值。</p>
+</li>
+<li><h4 id="说一下runnable和callable有什么区别？"><a href="#说一下runnable和callable有什么区别？" class="headerlink" title="说一下runnable和callable有什么区别？"></a>说一下runnable和callable有什么区别？</h4><p>  有点深的问题了，也看出一个Java程序员学习知识的广度。</p>
+<ul>
+<li>Runnable接口中的run()方法的返回值是void，它做的事情只是纯粹地去执行run()方法中的代码而已；</li>
+<li>Callable接口中的call()方法是有返回值的，是一个泛型，和Future、FutureTask配合可以用来获取异步执行的结果。</li>
+</ul>
+</li>
+<li><h4 id="线程有哪些状态？"><a href="#线程有哪些状态？" class="headerlink" title="线程有哪些状态？"></a>线程有哪些状态？</h4><p>  线程通常都有五种状态，创建、就绪、运行、阻塞和死亡。</p>
+<ul>
+<li>创建状态。在生成线程对象，并没有调用该对象的start方法，这是线程处于创建状态。</li>
+<li>就绪状态。当调用了线程对象的start方法之后，该线程就进入了就绪状态，但是此时线程调度程序还没有把该线程设置为当前线程，此时处于就绪状态。在线程运行之后，从等待或者睡眠中回来之后，也会处于就绪状态。</li>
+<li>运行状态。线程调度程序将处于就绪状态的线程设置为当前线程，此时线程就进入了运行状态，开始运行run函数当中的代码。</li>
+<li>阻塞状态。线程正在运行的时候，被暂停，通常是为了等待某个时间的发生(比如说某项资源就绪)之后再继续运行。sleep,suspend，wait等方法都可以导致线程阻塞。</li>
+<li>死亡状态。如果一个线程的run方法执行结束或者调用stop方法后，该线程就会死亡。对于已经死亡的线程，无法再使用start方法令其进入就绪 　　</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h4 id="sleep-和-wait-有什么区别？"><a href="#sleep-和-wait-有什么区别？" class="headerlink" title="sleep() 和 wait() 有什么区别？"></a>sleep() 和 wait() 有什么区别？</h4><ul>
+<li>sleep()：方法是线程类（Thread）的静态方法，让调用线程进入睡眠状态，让出执行机会给其他线程，等到休眠时间结束后，线程进入就绪状态和其他线程一起竞争cpu的执行时间。因为sleep() 是static静态的方法，他不能改变对象的机锁，当一个synchronized块中调用了sleep() 方法，线程虽然进入休眠，但是对象的机锁没有被释放，其他线程依然无法访问这个对象。</li>
+<li>wait()：wait()是Object类的方法，当一个线程执行到wait方法时，它就进入到一个和该对象相关的等待池，同时释放对象的机锁，使得其他线程能够访问，可以通过notify，notifyAll方法来唤醒等待的线程</li>
+</ul>
+</li>
+<li><h4 id="notify-和-notifyAll-有什么区别？"><a href="#notify-和-notifyAll-有什么区别？" class="headerlink" title="notify() 和 notifyAll() 有什么区别？"></a>notify() 和 notifyAll() 有什么区别？</h4><ul>
+<li>如果线程调用了对象的 wait()方法，那么线程便会处于该对象的等待池中，等待池中的线程不会去竞争该对象的锁。</li>
+<li>当有线程调用了对象的 notifyAll()方法（唤醒所有 wait 线程）或 notify()方法（只随机唤醒一个 wait 线程），被唤醒的的线程便会进入该对象的锁池中，锁池中的线程会去竞争该对象锁。也就是说，调用了notify后只要一个线程会由等待池进入锁池，而notifyAll会将该对象等待池内的所有线程移动到锁池中，等待锁竞争。</li>
+<li>优先级高的线程竞争到对象锁的概率大，假若某线程没有竞争到该对象锁，它还会留在锁池中，唯有线程再次调用 wait()方法，它才会重新回到等待池中。而竞争到对象锁的线程则继续往下执行，直到执行完了 synchronized 代码块，它会释放掉该对象锁，这时锁池中的线程会继续竞争该对象锁。</li>
+</ul>
+</li>
+<li><h4 id="线程run-和start-有什么区别？"><a href="#线程run-和start-有什么区别？" class="headerlink" title="线程run()和start()有什么区别？"></a>线程run()和start()有什么区别？</h4><ul>
+<li>每个线程都是通过某个特定Thread对象所对应的方法run()来完成其操作的，方法run()称为线程体。通过调用Thread类的start()方法来启动一个线程。</li>
+<li>start()方法来启动一个线程，真正实现了多线程运行。这时无需等待run方法体代码执行完毕，可以直接继续执行下面的代码； 这时此线程是处于就绪状态， 并没有运行。 然后通过此Thread类调用方法run()来完成其运行状态， 这里方法run()称为线程体，它包含了要执行的这个线程的内容， Run方法运行结束， 此线程终止。然后CPU再调度其它线程。</li>
+<li>run()方法是在本线程里的，只是线程里的一个函数,而不是多线程的。 如果直接调用run(),其实就相当于是调用了一个普通函数而已，直接待用run()方法必须等待run()方法执行完毕才能执行下面的代码，所以执行路径还是只有一条，根本就没有线程的特征，所以在多线程执行时要使用start()方法而不是run()方法。</li>
+</ul>
+</li>
+<li><h4 id="创建线程池有哪几种方式？"><a href="#创建线程池有哪几种方式？" class="headerlink" title="创建线程池有哪几种方式？"></a>创建线程池有哪几种方式？</h4><p>  ①. newFixedThreadPool(int nThreads)<br>  创建一个固定长度的线程池，每当提交一个任务就创建一个线程，直到达到线程池的最大数量，这时线程规模将不再变化，当线程发生未预期的错误而结束时，线程池会补充一个新的线程。<br>  ②. newCachedThreadPool()<br>  创建一个可缓存的线程池，如果线程池的规模超过了处理需求，将自动回收空闲线程，而当需求增加时，则可以自动添加新线程，线程池的规模不存在任何限制。<br>  ③. newSingleThreadExecutor()<br>  这是一个单线程的Executor，它创建单个工作线程来执行任务，如果这个线程异常结束，会创建一个新的来替代它；它的特点是能确保依照任务在队列中的顺序来串行执行。<br>  ④. newScheduledThreadPool(int corePoolSize)<br>  创建了一个固定长度的线程池，而且以延迟或定时的方式来执行任务，类似于Timer。</p>
+</li>
+<li><h4 id="线程池都有哪些状态？"><a href="#线程池都有哪些状态？" class="headerlink" title="线程池都有哪些状态？"></a>线程池都有哪些状态？</h4><p>  线程池有5种状态：Running、ShutDown、Stop、Tidying、Terminated。<br>  线程池各个状态切换框架图：</p>
+</li>
+<li><h4 id="线程池中submit-和-execute-方法有什么区别？"><a href="#线程池中submit-和-execute-方法有什么区别？" class="headerlink" title="线程池中submit() 和 execute()方法有什么区别？"></a>线程池中submit() 和 execute()方法有什么区别？</h4><ul>
+<li>接收的参数不一样</li>
+<li>submit有返回值，而execute没有</li>
+<li>submit方便Exception处理</li>
+</ul>
+</li>
+<li><h4 id="在java程序中怎么保证多线程的运行安全？"><a href="#在java程序中怎么保证多线程的运行安全？" class="headerlink" title="在java程序中怎么保证多线程的运行安全？"></a>在java程序中怎么保证多线程的运行安全？</h4><p>  线程安全在三个方面体现：</p>
+<ul>
+<li>原子性：提供互斥访问，同一时刻只能有一个线程对数据进行操作，（atomic,synchronized）；</li>
+<li>可见性：一个线程对主内存的修改可以及时地被其他线程看到，（synchronized,volatile）；</li>
+<li>有序性：一个线程观察其他线程中的指令执行顺序，由于指令重排序，该观察结果一般杂乱无序，（happens-before原则）。</li>
+</ul>
+</li>
+<li><h4 id="多线程锁的升级原理是什么？"><a href="#多线程锁的升级原理是什么？" class="headerlink" title="多线程锁的升级原理是什么？"></a>多线程锁的升级原理是什么？</h4><p>  在Java中，锁共有4种状态，级别从低到高依次为：无状态锁，偏向锁，轻量级锁和重量级锁状态，这几个状态会随着竞争情况逐渐升级。锁可以升级但不能降级。<br>  锁升级的图示过程： </p>
+</li>
+<li><h4 id="什么是死锁？"><a href="#什么是死锁？" class="headerlink" title="什么是死锁？"></a>什么是死锁？</h4><p>  死锁是指两个或两个以上的进程在执行过程中，由于竞争资源或者由于彼此通信而造成的一种阻塞的现象，若无外力作用，它们都将无法推进下去。此时称系统处于死锁状态或系统产生了死锁，这些永远在互相等待的进程称为死锁进程。是操作系统层面的一个错误，是进程死锁的简称，最早在 1965 年由 Dijkstra 在研究银行家算法时提出的，它是计算机操作系统乃至整个并发程序设计领域最难处理的问题之一。</p>
+</li>
+<li><h4 id="怎么防止死锁？"><a href="#怎么防止死锁？" class="headerlink" title="怎么防止死锁？"></a>怎么防止死锁？</h4><p>  死锁的四个必要条件：</p>
+<ul>
+<li><p>互斥条件：进程对所分配到的资源不允许其他进程进行访问，若其他进程访问该资源，只能等待，直至占有该资源的进程使用完成后释放该资源</p>
+</li>
+<li><p>请求和保持条件：进程获得一定的资源之后，又对其他资源发出请求，但是该资源可能被其他进程占有，此事请求阻塞，但又对自己获得的资源保持不放</p>
+</li>
+<li><p>不可剥夺条件：是指进程已获得的资源，在未完成使用之前，不可被剥夺，只能在使用完后自己释放</p>
+</li>
+<li><p>环路等待条件：是指进程发生死锁后，若干进程之间形成一种头尾相接的循环等待资源关系</p>
+<p>这四个条件是死锁的必要条件，只要系统发生死锁，这些条件必然成立，而只要上述条件之 一不满足，就不会发生死锁。<br>理解了死锁的原因，尤其是产生死锁的四个必要条件，就可以最大可能地避免、预防和 解除死锁。<br>所以，在系统设计、进程调度等方面注意如何不让这四个必要条件成立，如何确 定资源的合理分配算法，避免进程永久占据系统资源。<br>此外，也要防止进程在处于等待状态的情况下占用资源。因此，对资源的分配要给予合理的规划。</p>
+</li>
+</ul>
+</li>
+<li><h4 id="ThreadLocal是什么？有哪些使用场景？"><a href="#ThreadLocal是什么？有哪些使用场景？" class="headerlink" title="ThreadLocal是什么？有哪些使用场景？"></a>ThreadLocal是什么？有哪些使用场景？</h4><p>  线程局部变量是局限于线程内部的变量，属于线程自身所有，不在多个线程间共享。Java提供ThreadLocal类来支持线程局部变量，是一种实现线程安全的方式。但是在管理环境下（如 web 服务器）使用线程局部变量的时候要特别小心，在这种情况下，工作线程的生命周期比任何应用变量的生命周期都要长。任何线程局部变量一旦在工作完成后没有释放，Java 应用就存在内存泄露的风险。</p>
+</li>
+<li><h4 id="说一下synchronized底层实现原理？"><a href="#说一下synchronized底层实现原理？" class="headerlink" title="说一下synchronized底层实现原理？"></a>说一下synchronized底层实现原理？</h4><p>  synchronized可以保证方法或者代码块在运行时，同一时刻只有一个方法可以进入到临界区，同时它还可以保证共享变量的内存可见性。<br>  Java中每一个对象都可以作为锁，这是synchronized实现同步的基础：</p>
+<pre><code>- 普通同步方法，锁是当前实例对象
+- 静态同步方法，锁是当前类的class对象
+- 同步方法块，锁是括号里面的对象</code></pre></li>
+<li><h4 id="synchronized-和-volatile-的区别是什么？"><a href="#synchronized-和-volatile-的区别是什么？" class="headerlink" title="synchronized 和 volatile 的区别是什么？"></a>synchronized 和 volatile 的区别是什么？</h4><ul>
+<li>volatile本质是在告诉jvm当前变量在寄存器（工作内存）中的值是不确定的，需要从主存中读取； synchronized则是锁定当前变量，只有当前线程可以访问该变量，其他线程被阻塞住。</li>
+<li>volatile仅能使用在变量级别；synchronized则可以使用在变量、方法、和类级别的。</li>
+<li>volatile仅能实现变量的修改可见性，不能保证原子性；而synchronized则可以保证变量的修改可见性和原子性。</li>
+<li>volatile不会造成线程的阻塞；synchronized可能会造成线程的阻塞。</li>
+<li>volatile标记的变量不会被编译器优化；synchronized标记的变量可以被编译器优化。</li>
+</ul>
+</li>
+<li><h4 id="synchronized-和-Lock-有什么区别？"><a href="#synchronized-和-Lock-有什么区别？" class="headerlink" title="synchronized 和 Lock 有什么区别？"></a>synchronized 和 Lock 有什么区别？</h4><ul>
+<li>首先synchronized是java内置关键字，在jvm层面，Lock是个java类；</li>
+<li>synchronized无法判断是否获取锁的状态，Lock可以判断是否获取到锁；</li>
+<li>synchronized会自动释放锁(a 线程执行完同步代码会释放锁 ；b 线程执行过程中发生异常会释放锁)，Lock需在finally中手工释放锁（unlock()方法释放锁），否则容易造成线程死锁；</li>
+<li>用synchronized关键字的两个线程1和线程2，如果当前线程1获得锁，线程2线程等待。如果线程1阻塞，线程2则会一直等待下去，而Lock锁就不一定会等待下去，如果尝试获取不到锁，线程可以不用一直等待就结束了；</li>
+<li>synchronized的锁可重入、不可中断、非公平，而Lock锁可重入、可判断、可公平（两者皆可）；</li>
+<li>Lock锁适合大量同步的代码的同步问题，synchronized锁适合代码少量的同步问题。</li>
+</ul>
+</li>
+<li><h4 id="synchronized-和-ReentrantLock区别是什么？"><a href="#synchronized-和-ReentrantLock区别是什么？" class="headerlink" title="synchronized 和 ReentrantLock区别是什么？"></a>synchronized 和 ReentrantLock区别是什么？</h4><p>  synchronized是和if、else、for、while一样的关键字，ReentrantLock是类，这是二者的本质区别。既然ReentrantLock是类，那么它就提供了比synchronized更多更灵活的特性，可以被继承、可以有方法、可以有各种各样的类变量，ReentrantLock比synchronized的扩展性体现在几点上： </p>
+<ul>
+<li>ReentrantLock可以对获取锁的等待时间进行设置，这样就避免了死锁 </li>
+<li>ReentrantLock可以获取各种锁的信息</li>
+<li>ReentrantLock可以灵活地实现多路通知<br>另外，二者的锁机制其实也是不一样的:ReentrantLock底层调用的是Unsafe的park方法加锁，synchronized操作的应该是对象头中mark word。</li>
+</ul>
+</li>
+<li><h4 id="说一下atomic的原理。"><a href="#说一下atomic的原理。" class="headerlink" title="说一下atomic的原理。"></a>说一下atomic的原理。</h4><p>  Atomic包中的类基本的特性就是在多线程环境下，当有多个线程同时对单个（包括基本类型及引用类型）变量进行操作时，具有排他性，即当多个线程同时对该变量的值进行更新时，仅有一个线程能成功，而未成功的线程可以向自旋锁一样，继续尝试，一直等到执行成功。<br>  Atomic系列的类中的核心方法都会调用unsafe类中的几个本地方法。我们需要先知道一个东西就是Unsafe类，全名为：sun.misc.Unsafe，这个类包含了大量的对C代码的操作，包括很多直接内存分配以及原子操作的调用，而它之所以标记为非安全的，是告诉你这个里面大量的方法调用都会存在安全隐患，需要小心使用，否则会导致严重的后果，例如在通过unsafe分配内存的时候，如果自己指定某些区域可能会导致一些类似C++一样的指针越界到其他进程的问题。</p>
+</li>
+</ul>
+<h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a><strong>反射</strong></h3><ul>
+<li><h4 id="关于Java内存模型，一个对象（两个属性，四个方法）实例化100次，现在内存中的存储状态，几个对象，几个属性，几个方法。"><a href="#关于Java内存模型，一个对象（两个属性，四个方法）实例化100次，现在内存中的存储状态，几个对象，几个属性，几个方法。" class="headerlink" title="关于Java内存模型，一个对象（两个属性，四个方法）实例化100次，现在内存中的存储状态，几个对象，几个属性，几个方法。"></a>关于Java内存模型，一个对象（两个属性，四个方法）实例化100次，现在内存中的存储状态，几个对象，几个属性，几个方法。</h4><p>  由于Java中new出来的对象都是放在堆中，所以如果要实例化100次，将在堆中产生100个对象，一般对象与其中的属性、方法都属于一个整体，但如果 属性和方法是静态的，就是用static关键字声明的，那么属于类的属性和方法永远只在内存中存在一份。</p>
+</li>
+<li><h4 id="反射讲一讲，主要是概念-都在哪需要反射机制，反射的性能，如何优化？"><a href="#反射讲一讲，主要是概念-都在哪需要反射机制，反射的性能，如何优化？" class="headerlink" title="反射讲一讲，主要是概念,都在哪需要反射机制，反射的性能，如何优化？"></a>反射讲一讲，主要是概念,都在哪需要反射机制，反射的性能，如何优化？</h4><p>  反射机制的定义：<br>  是在运行状态中，对于任意的一个类，都能够知道这个类的所有属性和方法，对任意一个对象都能够通过反射机制调用一个类的任意方法，这种动态获取类信息及动态调用类对象方法的功能称为java的反射机制。<br>  反射的作用：</p>
+<ol>
+<li>动态地创建类的实例，将类绑定到现有的对象中，或从现有的对象中获取类型。</li>
+<li>应用程序需要在运行时从某个特定的程序集中载入一个特定的类。</li>
+</ol>
+</li>
+<li><h4 id="什么是反射？"><a href="#什么是反射？" class="headerlink" title="什么是反射？"></a>什么是反射？</h4><p>  反射主要是指程序可以访问、检测和修改它本身状态或行为的一种能力<br>  Java反射：<br>  在Java运行时环境中，对于任意一个类，能否知道这个类有哪些属性和方法？对于任意一个对象，能否调用它的任意一个方法<br>  Java反射机制主要提供了以下功能：</p>
+<pre><code>- 在运行时判断任意一个对象所属的类。
+- 在运行时构造任意一个类的对象。
+- 在运行时判断任意一个类所具有的成员变量和方法。
+- 在运行时调用任意一个对象的方法。 </code></pre></li>
+<li><h4 id="什么事java序列化？什么情况下需要序列化？"><a href="#什么事java序列化？什么情况下需要序列化？" class="headerlink" title="什么事java序列化？什么情况下需要序列化？"></a>什么事java序列化？什么情况下需要序列化？</h4><p>  简单说就是为了保存在内存中的各种对象的状态（也就是实例变量，不是方法），并且可以把保存的对象状态再读出来。虽然你可以用你自己的各种各样的方法来保存object states，但是Java给你提供一种应该比你自己好的保存对象状态的机制，那就是序列化。<br>  什么情况下需要序列化：</p>
+<ul>
+<li>当你想把的内存中的对象状态保存到一个文件中或者数据库中时候；</li>
+<li>当你想用套接字在网络上传送对象的时候；</li>
+<li>当你想通过RMI传输对象的时候；</li>
+</ul>
+</li>
+<li><h4 id="动态代理是什么？有哪些应用？"><a href="#动态代理是什么？有哪些应用？" class="headerlink" title="动态代理是什么？有哪些应用？"></a>动态代理是什么？有哪些应用？</h4><ul>
+<li>动态代理：<br>当想要给实现了某个接口的类中的方法，加一些额外的处理。比如说加日志，加事务等。可以给这个类创建一个代理，故名思议就是创建一个新的类，这个类不仅包含原来类方法的功能，而且还在原来的基础上添加了额外处理的新类。这个代理类并不是定义好的，是动态生成的。具有解耦意义，灵活，扩展性强。</li>
+<li>动态代理的应用：<ul>
+<li>Spring的AOP</li>
+<li>加事务</li>
+<li>加权限</li>
+<li>加日志</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="怎么实现动态代理？"><a href="#怎么实现动态代理？" class="headerlink" title="怎么实现动态代理？"></a>怎么实现动态代理？</h4><p>  首先必须定义一个接口，还要有一个InvocationHandler(将实现接口的类的对象传递给它)处理类。再有一个工具类Proxy(习惯性将其称为代理类，因为调用他的newInstance()可以产生代理对象,其实他只是一个产生代理对象的工具类）。利用到InvocationHandler，拼接代理类源码，将其编译生成代理类的二进制码，利用加载器加载，并将其实例化产生代理对象，最后返回。</p>
+</li>
+</ul>
+<h3 id="java-web"><a href="#java-web" class="headerlink" title="java web"></a><strong>java web</strong></h3><ul>
+<li><h4 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期"></a>Servlet的生命周期</h4><p>  大致分为4部：Servlet类加载–&gt;实例化–&gt;服务–&gt;销毁<br>  Tomcat中Servlet的时序图如下所示：待导入</p>
+<ol>
+<li>Web Client向Servlet容器(Tomcat)发出HTTP请求。</li>
+<li>Servlet容器接收Client端的请求。</li>
+<li>Servlet容器创建一个HttpRequest对象，将Client的请求信息封装到这个对象中。</li>
+<li>Servlet创建一个HttpResponse对象。</li>
+<li>Servlet调用HttpServlet对象的service方法，把HttpRequest对象和HttpResponse对象作为参数传递给HttpServlet对象中。</li>
+<li>HttpServlet调用HttpRequest对象的方法，获取Http请求，并进行相应处理。</li>
+<li>处理完成HttpServlet调用HttpResponse对象的方法，返回响应数据。</li>
+<li>Servlet容器把HttpServlet的响应结果传回客户端。<br>其中的3个方法说明了Servlet的生命周期：</li>
+<li>init()：负责初始化Servlet对象。</li>
+<li>service()：负责响应客户端请求。</li>
+<li>destroy()：当Servlet对象推出时，负责释放占用资源。</li>
+</ol>
+</li>
+<li><h4 id="session-和-cookie-有什么区别？"><a href="#session-和-cookie-有什么区别？" class="headerlink" title="session 和 cookie 有什么区别？"></a>session 和 cookie 有什么区别？</h4><ol>
+<li>Session由应用服务器维护的一个服务器端的存储空间；Cookie是客户端的存储空间，由浏览器维护。</li>
+<li>用户可以通过浏览器设置决定是否保存Cookie，而不能决定是否保存Session，因为Session是由服务器端维护的。</li>
+<li>Session中保存的是对象，Cookie中保存的是字符串。</li>
+<li>Session和Cookie不能跨窗口使用，每打开一个浏览器系统会赋予一个SessionID，此时的SessionID不同，若要完成跨浏览器访问数据，可以使用 Application。</li>
+<li>Session、Cookie都有失效时间，过期后会自动删除，减少系统开销。</li>
+</ol>
+<ul>
+<li>由于HTTP协议是无状态的协议，所以服务端需要记录用户的状态时，就需要用某种机制来识具体的用户，这个机制就是Session.典型的场景比如购物车，当你点击下单按钮时，由于HTTP协议无状态，所以并不知道是哪个用户操作的，所以服务端要为特定的用户创建了特定的Session，用用于标识这个用户，并且跟踪用户，这样才知道购物车里面有几本书。这个Session是保存在服务端的，有一个唯一标识。在服务端保存Session的方法很多，内存、数据库、文件都有。集群的时候也要考虑Session的转移，在大型的网站，一般会有专门的Session服务器集群，用来保存用户会话，这个时候 Session 信息都是放在内存的，使用一些缓存服务比如Memcached之类的来放 Session。</li>
+<li>思考一下服务端如何识别特定的客户？这个时候Cookie就登场了。每次HTTP请求的时候，客户端都会发送相应的Cookie信息到服务端。实际上大多数的应用都是用 Cookie 来实现Session跟踪的，第一次创建Session的时候，服务端会在HTTP协议中告诉客户端，需要在 Cookie 里面记录一个Session ID，以后每次请求把这个会话ID发送到服务器，我就知道你是谁了。有人问，如果客户端的浏览器禁用了 Cookie 怎么办？一般这种情况下，会使用一种叫做URL重写的技术来进行会话跟踪，即每次HTTP交互，URL后面都会被附加上一个诸如 sid=xxxxx 这样的参数，服务端据此来识别用户。</li>
+<li>Cookie其实还可以用在一些方便用户的场景下，设想你某次登陆过一个网站，下次登录的时候不想再次输入账号了，怎么办？这个信息可以写到Cookie里面，访问网站的时候，网站页面的脚本可以读取这个信息，就自动帮你把用户名给填了，能够方便一下用户。这也是Cookie名称的由来，给用户的一点甜头。所以，总结一下：Session是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在集群、数据库、文件中；Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，也是实现Session的一种方式。</li>
+</ul>
+</li>
+<li><h4 id="说一下session的工作原理？"><a href="#说一下session的工作原理？" class="headerlink" title="说一下session的工作原理？"></a>说一下session的工作原理？</h4><p>  其实session是一个存在服务器上的类似于一个散列表格的文件。里面存有我们需要的信息，在我们需要用的时候可以从里面取出来。类似于一个大号的map吧，里面的键存储的是用户的sessionid，用户向服务器发送请求的时候会带上这个sessionid。这时就可以从中取出对应的值了。</p>
+</li>
+<li><h4 id="如果客户端禁止cookie能实现session吗？还能用吗？"><a href="#如果客户端禁止cookie能实现session吗？还能用吗？" class="headerlink" title="如果客户端禁止cookie能实现session吗？还能用吗？"></a>如果客户端禁止cookie能实现session吗？还能用吗？</h4><ul>
+<li>Cookie与 Session，一般认为是两个独立的东西，Session采用的是在服务器端保持状态的方案，而Cookie采用的是在客户端保持状态的方案。但为什么禁用Cookie就不能得到Session呢？因为Session是用Session ID来确定当前对话所对应的服务器Session，而Session ID是通过Cookie来传递的，禁用Cookie相当于失去了Session ID，也就得不到Session了。</li>
+<li>假定用户关闭Cookie的情况下使用Session，其实现途径有以下几种：<ul>
+<li>设置php.ini配置文件中的“session.use_trans_sid = 1”，或者编译时打开打开了“–enable-trans-sid”选项，让PHP自动跨页传递Session ID。</li>
+<li>手动通过URL传值、隐藏表单传递Session ID。</li>
+<li>用文件、数据库等形式保存Session ID，在跨页过程中手动调用。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="什么是XSS攻击，如何避免？"><a href="#什么是XSS攻击，如何避免？" class="headerlink" title="什么是XSS攻击，如何避免？"></a>什么是XSS攻击，如何避免？</h4><p>  XSS攻击又称CSS,全称Cross Site Script  （跨站脚本攻击），其原理是攻击者向有XSS漏洞的网站中输入恶意的 HTML 代码，当用户浏览该网站时，这段 HTML 代码会自动执行，从而达到攻击的目的。XSS 攻击类似于 SQL 注入攻击，SQL注入攻击中以SQL语句作为用户输入，从而达到查询/修改/删除数据的目的，而在xss攻击中，通过插入恶意脚本，实现对用户游览器的控制，获取用户的一些信息。 XSS是 Web 程序中常见的漏洞，XSS 属于被动式且用于客户端的攻击方式。<br>  XSS防范的总体思路是：对输入(和URL参数)进行过滤，对输出进行编码。</p>
+</li>
+<li><h4 id="什么是CSRF攻击，如何避免？"><a href="#什么是CSRF攻击，如何避免？" class="headerlink" title="什么是CSRF攻击，如何避免？"></a>什么是CSRF攻击，如何避免？</h4><ul>
+<li>CSRF（Cross-site request forgery）也被称为 one-click attack或者 session riding，中文全称是叫跨站请求伪造。一般来说，攻击者通过伪造用户的浏览器的请求，向访问一个用户自己曾经认证访问过的网站发送出去，使目标网站接收并误以为是用户的真实操作而去执行命令。常用于盗取账号、转账、发送虚假消息等。攻击者利用网站对请求的验证漏洞而实现这样的攻击行为，网站能够确认请求来源于用户的浏览器，却不能验证请求是否源于用户的真实意愿下的操作行为。</li>
+<li>如何避免：<ol>
+<li>验证 HTTP Referer 字段<br>HTTP头中的Referer字段记录了该 HTTP 请求的来源地址。在通常情况下，访问一个安全受限页面的请求来自于同一个网站，而如果黑客要对其实施 CSRF<br>攻击，他一般只能在他自己的网站构造请求。因此，可以通过验证Referer值来防御CSRF 攻击。</li>
+<li>使用验证码<br>关键操作页面加上验证码，后台收到请求后通过判断验证码可以防御CSRF。但这种方法对用户不太友好。</li>
+<li>在请求地址中添加token并验证<br>CSRF 攻击之所以能够成功，是因为黑客可以完全伪造用户的请求，该请求中所有的用户验证信息都是存在于cookie中，因此黑客可以在不知道这些验证信息的情况下直接利用用户自己的cookie 来通过安全验证。要抵御 CSRF，关键在于在请求中放入黑客所不能伪造的信息，并且该信息不存在于 cookie 之中。可以在 HTTP 请求中以参数的形式加入一个随机产生的 token，并在服务器端建立一个拦截器来验证这个 token，如果请求中没有token或者 token 内容不正确，则认为可能是 CSRF 攻击而拒绝该请求。这种方法要比检查 Referer 要安全一些，token 可以在用户登陆后产生并放于session之中，然后在每次请求时把token 从 session 中拿出，与请求中的 token 进行比对，但这种方法的难点在于如何把 token 以参数的形式加入请求。<br>对于 GET 请求，token 将附在请求地址之后，这样 URL 就变成 <a href="http://url?csrftoken=tokenvalue。" target="_blank" rel="noopener">http://url?csrftoken=tokenvalue。</a><br>而对于 POST 请求来说，要在 form 的最后加上 <input type="hidden" name="csrftoken" value="tokenvalue"/>，这样就把token以参数的形式加入请求了。</li>
+<li>在HTTP 头中自定义属性并验证<br>这种方法也是使用 token 并进行验证，和上一种方法不同的是，这里并不是把 token 以参数的形式置于 HTTP 请求之中，而是把它放到 HTTP 头中自定义的属性里。通过 XMLHttpRequest 这个类，可以一次性给所有该类请求加上 csrftoken 这个 HTTP 头属性，并把 token 值放入其中。这样解决了上种方法在请求中加入 token 的不便，同时，通过 XMLHttpRequest 请求的地址不会被记录到浏览器的地址栏，也不用担心 token 会透过 Referer 泄露到其他网站中去。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a><strong>异常</strong></h3><ul>
+<li><h4 id="throw-和-throws-的区别？"><a href="#throw-和-throws-的区别？" class="headerlink" title="throw 和 throws 的区别？"></a>throw 和 throws 的区别？</h4><p>  throws是用来声明一个方法可能抛出的所有异常信息，throws是将异常声明但是不处理，而是将异常往上传，谁调用我就交给谁处理。而throw则是指抛出的一个具体的异常类型。</p>
+</li>
+<li><h4 id="final、finally、finalize有什么区别？"><a href="#final、finally、finalize有什么区别？" class="headerlink" title="final、finally、finalize有什么区别？"></a>final、finally、finalize有什么区别？</h4><ul>
+<li>final可以修饰类、变量、方法，修饰类表示该类不能被继承、修饰方法表示该方法不能被重写、修饰变量表示该变量是一个常量不能被重新赋值。</li>
+<li>finally一般作用在try-catch代码块中，在处理异常的时候，通常我们将一定要执行的代码方法finally代码块中，表示不管是否出现异常，该代码块都会执行，一般用来存放一些关闭资源的代码。</li>
+<li>finalize是一个方法，属于Object类的一个方法，而Object类是所有类的父类，该方法一般由垃圾回收器来调用，当我们调用System的gc()方法的时候，由垃圾回收器调用finalize(),回收垃圾</li>
+</ul>
+</li>
+<li><h4 id="try-catch-finally-中哪个部分可以省略？"><a href="#try-catch-finally-中哪个部分可以省略？" class="headerlink" title="try-catch-finally 中哪个部分可以省略？"></a>try-catch-finally 中哪个部分可以省略？</h4><ul>
+<li>答：catch 可以省略</li>
+<li>原因：<br>更为严格的说法其实是：try只适合处理运行时异常，try+catch适合处理运行时异常+普通异常。也就是说，如果你只用try去处理普通异常却不加以catch处理，编译是通不过的，因为编译器硬性规定，普通异常如果选择捕获，则必须用catch显示声明以便进一步处理。而运行时异常在编译时没有如此规定，所以catch可以省略，你加上catch编译器也觉得无可厚非。<br>理论上，编译器看任何代码都不顺眼，都觉得可能有潜在的问题，所以你即使对所有代码加上try，代码在运行期时也只不过是在正常运行的基础上加一层皮。但是你一旦对一段代码加上try，就等于显示地承诺编译器，对这段代码可能抛出的异常进行捕获而非向上抛出处理。如果是普通异常，编译器要求必须用catch捕获以便进一步处理；如果运行时异常，捕获然后丢弃并且+finally扫尾处理，或者加上catch捕获以便进一步处理。<br>至于加上finally，则是在不管有没捕获异常，都要进行的“扫尾”处理。</li>
+</ul>
+</li>
+<li><h4 id="try-catch-finally中，如果catch中return了，finally还会执行吗？"><a href="#try-catch-finally中，如果catch中return了，finally还会执行吗？" class="headerlink" title="try-catch-finally中，如果catch中return了，finally还会执行吗？"></a>try-catch-finally中，如果catch中return了，finally还会执行吗？</h4><p>  答：会执行，在 return 前执行<br>  代码示例1：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* java面试题--如果catch里面有return语句，finally里面的代码还会执行吗？</span><br><span class="line">*/</span><br><span class="line">public class FinallyDemo2 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.out.println(getInt());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static int getInt() &#123;</span><br><span class="line">        int a = 10;</span><br><span class="line">        try &#123;</span><br><span class="line">            System.out.println(a / 0);</span><br><span class="line">            a = 20;</span><br><span class="line">        &#125; catch (ArithmeticException e) &#123;</span><br><span class="line">            a = 30;</span><br><span class="line">            return a;</span><br><span class="line">            /*</span><br><span class="line">            * return a 在程序执行到这一步的时候，这里不是return a 而是 return 30；这个返回路径就形成了</span><br><span class="line">            * 但是呢，它发现后面还有finally，所以继续执行finally的内容，a=40</span><br><span class="line">            * 再次回到以前的路径,继续走return 30，形成返回路径之后，这里的a就不是a变量了，而是常量30</span><br><span class="line">            */</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            a = 40;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">//      return a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  执行结果：30</p>
+<p>  代码示例2：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">package com.java_02;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">* java面试题--如果catch里面有return语句，finally里面的代码还会执行吗？</span><br><span class="line">*/</span><br><span class="line">public class FinallyDemo2 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.out.println(getInt());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static int getInt() &#123;</span><br><span class="line">        int a = 10;</span><br><span class="line">        try &#123;</span><br><span class="line">            System.out.println(a / 0);</span><br><span class="line">            a = 20;</span><br><span class="line">        &#125; catch (ArithmeticException e) &#123;</span><br><span class="line">            a = 30;</span><br><span class="line">            return a;</span><br><span class="line">            /*</span><br><span class="line">            * return a 在程序执行到这一步的时候，这里不是return a 而是 return 30；这个返回路径就形成了</span><br><span class="line">            * 但是呢，它发现后面还有finally，所以继续执行finally的内容，a=40</span><br><span class="line">            * 再次回到以前的路径,继续走return 30，形成返回路径之后，这里的a就不是a变量了，而是常量30</span><br><span class="line">            */</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            a = 40;</span><br><span class="line">            return a; //如果这样，就又重新形成了一条返回路径，由于只能通过1个return返回，所以这里直接返回40</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">//      return a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  执行结果：40</p>
+</li>
+<li><h4 id="常见的异常类有哪些？"><a href="#常见的异常类有哪些？" class="headerlink" title="常见的异常类有哪些？"></a>常见的异常类有哪些？</h4><ul>
+<li>NullPointerException：当应用程序试图访问空对象时，则抛出该异常。</li>
+<li>SQLException：提供关于数据库访问错误或其他错误信息的异常。</li>
+<li>IndexOutOfBoundsException：指示某排序索引（例如对数组、字符串或向量的排序）超出范围时抛出。 </li>
+<li>NumberFormatException：当应用程序试图将字符串转换成一种数值类型，但该字符串不能转换为适当格式时，抛出该异常。</li>
+<li>FileNotFoundException：当试图打开指定路径名表示的文件失败时，抛出此异常。</li>
+<li>IOException：当发生某种I/O异常时，抛出此异常。此类是失败或中断的I/O操作生成的异常的通用类。</li>
+<li>ClassCastException：当试图将对象强制转换为不是实例的子类时，抛出该异常。</li>
+<li>ArrayStoreException：试图将错误类型的对象存储到一个对象数组时抛出的异常。</li>
+<li>IllegalArgumentException：抛出的异常表明向方法传递了一个不合法或不正确的参数。</li>
+<li>ArithmeticException：当出现异常的运算条件时，抛出此异常。例如，一个整数“除以零”时，抛出此类的一个实例。 </li>
+<li>NegativeArraySizeException：如果应用程序试图创建大小为负的数组，则抛出该异常。</li>
+<li>NoSuchMethodException：无法找到某一特定方法时，抛出该异常。</li>
+<li>SecurityException：由安全管理器抛出的异常，指示存在安全侵犯。</li>
+<li>UnsupportedOperationException：当不支持请求的操作时，抛出该异常。</li>
+<li>RuntimeExceptionRuntimeException：是那些可能在Java虚拟机正常运行期间抛出的异常的超类。</li>
+</ul>
+</li>
+</ul>
+<h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a><strong>网络</strong></h3><ul>
+<li><h4 id="HTTP-报文包含内容"><a href="#HTTP-报文包含内容" class="headerlink" title="HTTP 报文包含内容"></a>HTTP 报文包含内容</h4><p>  <strong>主要包含四部分：</strong></p>
+<ol>
+<li>request line</li>
+<li>header line</li>
+<li>blank line</li>
+<li>request body</li>
+</ol>
+<p>  <strong>注意：</strong>上面的三个问题是网络编程的基础知识问题，作为Java工程师也需要掌握HTTP的知识，而如今HTTPS同样也成为了标准，也需要大家进一步了解。此外，相对于大家在课本或者课堂中所学习的HTTP 1.0/1.1这些协议而言，很多公司已经迈入了HTTP 2.0时代，因此两者之间的差别也需要我们进一步了解。</p>
+</li>
+<li><h4 id="http响应码301和302代表的是什么？有什么区别？"><a href="#http响应码301和302代表的是什么？有什么区别？" class="headerlink" title="http响应码301和302代表的是什么？有什么区别？"></a>http响应码301和302代表的是什么？有什么区别？</h4><p>  301，302 都是HTTP状态的编码，都代表着某个URL发生了转移。<br>  区别： </p>
+<ul>
+<li>301 redirect: 301 代表永久性转移(Permanently Moved)。</li>
+<li>302 redirect: 302 代表暂时性转移(Temporarily Moved )。</li>
+</ul>
+</li>
+<li><h4 id="froward-和-redirect-的区别？"><a href="#froward-和-redirect-的区别？" class="headerlink" title="froward 和 redirect 的区别？"></a>froward 和 redirect 的区别？</h4><ul>
+<li>Forward和Redirect代表了两种请求转发方式：直接转发和间接转发。</li>
+<li>直接转发方式（Forward），客户端和浏览器只发出一次请求，Servlet、HTML、JSP或其它信息资源，由第二个信息资源响应该请求，在请求对象request中，保存的对象对于每个信息资源是共享的。</li>
+<li>间接转发方式（Redirect）实际是两次HTTP请求，服务器端在响应第一次请求的时候，让浏览器再向另外一个URL发出请求，从而达到转发的目的。<br>举个通俗的例子：</li>
+<li>直接转发就相当于：“A找B借钱，B说没有，B去找C借，借到借不到都会把消息传递给A”；</li>
+<li>间接转发就相当于：”A找B借钱，B说没有，让A去找C借”。</li>
+</ul>
+</li>
+<li><h4 id="sendRedirect-foward区别"><a href="#sendRedirect-foward区别" class="headerlink" title="sendRedirect, foward区别"></a>sendRedirect, foward区别</h4><ol>
+<li>foward是服务器端控制页面转向，在客户端的浏览器地址中不会显示转向后的地址；sendRedirect则是完全的跳转，浏览器中会显示跳转的地址并重新发送请求链接。原理：forward是服务器请求资源，服务器直接访问目标地址的URL，把那个URL的响应内容读取过来，然后再将这些内容返回给浏览器，浏览器根本不知道服务器发送的这些内容是从哪来的，所以地址栏还是原来的地址。</li>
+<li>redirect是服务器端根据逻辑，发送一个状态码，告诉浏览器重新去请求的那个地址，浏览器会用刚才的所有参数重新发送新的请求。</li>
+</ol>
+<p>  <strong>注意：</strong>以上的三个问题在之前网络相关的知识上更进一步，上升到了Java网络编程的相关知识，这部分意在考察面试者对于Java网络编程相关知识的掌握程度。</p>
+</li>
+<li><h4 id="简述tcp和udp的区别？"><a href="#简述tcp和udp的区别？" class="headerlink" title="简述tcp和udp的区别？"></a>简述tcp和udp的区别？</h4></li>
+<li><h4 id="tcp为什么要三次握手，两次不行吗？为什么？"><a href="#tcp为什么要三次握手，两次不行吗？为什么？" class="headerlink" title="tcp为什么要三次握手，两次不行吗？为什么？"></a>tcp为什么要三次握手，两次不行吗？为什么？</h4><ul>
+<li>TCP面向连接（如打电话要先拨号建立连接）;UDP是无连接的，即发送数据之前不需要建立连接。</li>
+<li>TCP提供可靠的服务。也就是说，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达;UDP尽最大努力交付，即不保证可靠交付。</li>
+<li>Tcp通过校验和，重传控制，序号标识，滑动窗口、确认应答实现可靠传输。如丢包时的重发控制，还可以对次序乱掉的分包进行顺序控制。</li>
+<li>UDP具有较好的实时性，工作效率比TCP高，适用于对高速传输和实时性有较高的通信或广播通信。</li>
+<li>每一条TCP连接只能是点到点的;UDP支持一对一，一对多，多对一和多对多的交互通信。</li>
+<li>TCP对系统资源要求较多，UDP对系统资源要求较少。</li>
+</ul>
+</li>
+<li><h4 id="说一下tcp粘包是怎么产生的？"><a href="#说一下tcp粘包是怎么产生的？" class="headerlink" title="说一下tcp粘包是怎么产生的？"></a>说一下tcp粘包是怎么产生的？</h4><ul>
+<li>为了实现可靠数据传输， TCP 协议的通信双方， 都必须维护一个序列号， 以标识发送出去的数据包中， 哪些是已经被对方收到的。 三次握手的过程即是通信双方相互告知序列号起始值， 并确认对方已经收到了序列号起始值的必经步骤。</li>
+<li>如果只是两次握手， 至多只有连接发起方的起始序列号能被确认， 另一方选择的序列号则得不到确认。</li>
+</ul>
+</li>
+<li><h4 id="说一下-tcp-粘包是怎么产生的？"><a href="#说一下-tcp-粘包是怎么产生的？" class="headerlink" title="说一下 tcp 粘包是怎么产生的？"></a>说一下 tcp 粘包是怎么产生的？</h4><p>  ①. 发送方产生粘包<br>  采用TCP协议传输数据的客户端与服务器经常是保持一个长连接的状态（一次连接发一次数据不存在粘包），双方在连接不断开的情况下，可以一直传输数据；但当发送的数据包过于的小时，那么TCP协议默认的会启用Nagle算法，将这些较小的数据包进行合并发送（缓冲区数据发送是一个堆压的过程）；这个合并过程就是在发送缓冲区中进行的，也就是说数据发送出来它已经是粘包的状态了。<br>  ②. 接收方产生粘包<br>  接收方采用TCP协议接收数据时的过程是这样的：数据到底接收方，从网络模型的下方传递至传输层，传输层的TCP协议处理是将其放置接收缓冲区，然后由应用层来主动获取（C语言用recv、read等函数）；这时会出现一个问题，就是我们在程序中调用的读取数据函数不能及时的把缓冲区中的数据拿出来，而下一个数据又到来并有一部分放入的缓冲区末尾，等我们读取数据时就是一个粘包。（放数据的速度 &gt; 应用层拿数据速度） </p>
+</li>
+<li><h4 id="OSI-的七层模型都有哪些？"><a href="#OSI-的七层模型都有哪些？" class="headerlink" title="OSI 的七层模型都有哪些？"></a>OSI 的七层模型都有哪些？</h4><ul>
+<li>应用层：网络服务与最终用户的一个接口。</li>
+<li>表示层：数据的表示、安全、压缩。</li>
+<li>会话层：建立、管理、终止会话。</li>
+<li>传输层：定义传输数据的协议端口号，以及流控和差错校验。</li>
+<li>网络层：进行逻辑地址寻址，实现不同网络之间的路径选择。</li>
+<li>数据链路层：建立逻辑连接、进行硬件地址寻址、差错校验等功能。</li>
+<li>物理层：建立、维护、断开物理连接。</li>
+</ul>
+</li>
+<li><h4 id="get和post请求有哪些区别？、"><a href="#get和post请求有哪些区别？、" class="headerlink" title="get和post请求有哪些区别？、"></a>get和post请求有哪些区别？、</h4><ul>
+<li><p><strong>基础知识：</strong></p>
+<p>HTTP的请求格式如下:<br>主要包含三个信息：1、请求的类型（GET或POST），2、要访问的资源（如resimga.jif），3、HTTP版本（http/1.1）</p>
+</li>
+<li><p><strong>区别：</strong></p>
+</li>
+</ul>
+<ol>
+<li>Get是从服务器端获取数据，Post则是向服务器端发送数据。</li>
+<li>在客户端，Get方式通过URL提交数据，在URL地址栏可以看到请求消息，该消息被编码过；Post数据则是放在Html header内提交。</li>
+<li>对于Get方式，服务器端用Request.QueryString获取变量的值；对用Post方式，服务器端用Request.Form获取提交的数据值。</li>
+<li>Get方式提交的数据最多1024字节，而Post则没有限制。</li>
+<li>Get方式提交的参数及参数值会在地址栏显示，不安全，而Post不会，比较安全。</li>
+</ol>
+</li>
+<li><h4 id="如何实现跨域？"><a href="#如何实现跨域？" class="headerlink" title="如何实现跨域？"></a>如何实现跨域？</h4><ul>
+<li><strong>方式一：图片ping或script标签跨域</strong><br>图片ping常用于跟踪用户点击页面或动态广告曝光次数。<br>script标签可以得到从其他来源数据，这也是JSONP依赖的根据。 </li>
+<li><strong>方式二：JSONP跨域</strong><br>JSONP（JSON with Padding）是数据格式JSON的一种“使用模式”，可以让网页从别的网域要数据。根据 XmlHttpRequest 对象受到同源策略的影响，而利用 &lt; script &gt;元素的这个开放策略，网页可以得到从其他来源动态产生的JSON数据，而这种使用模式就是所谓的 JSONP。用JSONP抓到的数据并不是JSON，而是任意的JavaScript，用 JavaScript解释器运行而不是用JSON解析器解析。所有，通过Chrome查看所有JSONP发送的Get请求都是js类型，而非XHR。<br>缺点：<br>只能使用Get请求<br>不能注册success、error等事件监听函数，不能很容易的确定JSONP请求是否失败<br>JSONP是从其他域中加载代码执行，容易受到跨站请求伪造的攻击，其安全性无法确保</li>
+<li><strong>方式三：CORS</strong><br>Cross-Origin Resource Sharing（CORS）跨域资源共享是一份浏览器技术的规范，提供了 Web 服务从不同域传来沙盒脚本的方法，以避开浏览器的同源策略，确保安全的跨域数据传输。现代浏览器使用CORS在API容器如XMLHttpRequest来减少HTTP请求的风险来源。与 JSONP 不同，CORS 除了 GET 要求方法以外也支持其他的 HTTP 要求。服务器一般需要增加如下响应头的一种或几种：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Access-Control-Allow-Origin: *</span><br><span class="line">Access-Control-Allow-Methods: POST, GET, OPTIONS</span><br><span class="line">Access-Control-Allow-Headers: X-PINGOTHER, Content-Type</span><br><span class="line">Access-Control-Max-Age: 86400</span><br></pre></td></tr></table></figure>
+跨域请求默认不会携带Cookie信息，如果需要携带，请配置下述参数：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;Access-Control-Allow-Credentials&quot;: true</span><br><span class="line">// Ajax设置</span><br><span class="line">&quot;withCredentials&quot;: true</span><br></pre></td></tr></table></figure></li>
+<li><strong>方式四：window.name+iframe</strong><br>window.name通过在iframe（一般动态创建i）中加载跨域HTML文件来起作用。然后，HTML文件将传递给请求者的字符串内容赋值给window.name。然后，请求者可以检索window.name值作为响应。<br>iframe标签的跨域能力；<br>window.name属性值在文档刷新后依旧存在的能力（且最大允许2M左右）。<br>每个iframe都有包裹它的window，而这个window是top window的子窗口。contentWindow属性返回&lt; iframe&gt;元素的Window对象。你可以使用这个Window对象来访问iframe的文档及其内部DOM。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- </span><br><span class="line">下述用端口 </span><br><span class="line">10000表示：domainA</span><br><span class="line">10001表示：domainB</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- localhost:10000 --&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var iframe = document.createElement(&apos;iframe&apos;);</span><br><span class="line">iframe.style.display = &apos;none&apos;; // 隐藏</span><br><span class="line"></span><br><span class="line">var state = 0; // 防止页面无限刷新</span><br><span class="line">iframe.onload = function() &#123;</span><br><span class="line">    if(state === 1) &#123;</span><br><span class="line">        console.log(JSON.parse(iframe.contentWindow.name));</span><br><span class="line">        // 清除创建的iframe</span><br><span class="line">        iframe.contentWindow.document.write(&apos;&apos;);</span><br><span class="line">        iframe.contentWindow.close();</span><br><span class="line">        document.body.removeChild(iframe);</span><br><span class="line">    &#125; else if(state === 0) &#123;</span><br><span class="line">        state = 1;</span><br><span class="line">        // 加载完成，指向当前域，防止错误(proxy.html为空白页面)</span><br><span class="line">        // Blocked a frame with origin &quot;http://localhost:10000&quot; from accessing a cross-origin frame.</span><br><span class="line">        iframe.contentWindow.location = &apos;http://localhost:10000/proxy.html&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">iframe.src = &apos;http://localhost:10001&apos;;</span><br><span class="line">document.body.appendChild(iframe);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- localhost:10001 --&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">...</span><br><span class="line">&lt;script&gt;</span><br><span class="line">window.name = JSON.stringify(&#123;a: 1, b: 2&#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+<li><strong>方式五：window.postMessage()</strong><br>HTML5新特性，可以用来向其他所有的 window 对象发送消息。需要注意的是我们必须要保证所有的脚本执行完才发送 MessageEvent，如果在函数执行的过程中调用了它，就会让后面的函数超时无法执行。<br>下述代码实现了跨域存储localStorage<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- </span><br><span class="line">下述用端口 </span><br><span class="line">10000表示：domainA</span><br><span class="line">10001表示：domainB</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- localhost:10000 --&gt;</span><br><span class="line">&lt;iframe src=&quot;http://localhost:10001/msg.html&quot; name=&quot;myPostMessage&quot; style=&quot;display:none;&quot;&gt;</span><br><span class="line">&lt;/iframe&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">function main() &#123;</span><br><span class="line">    LSsetItem(&apos;test&apos;, &apos;Test: &apos; + new Date());</span><br><span class="line">    LSgetItem(&apos;test&apos;, function(value) &#123;</span><br><span class="line">        console.log(&apos;value: &apos; + value);</span><br><span class="line">    &#125;);</span><br><span class="line">    LSremoveItem(&apos;test&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var callbacks = &#123;&#125;;</span><br><span class="line">window.addEventListener(&apos;message&apos;, function(event) &#123;</span><br><span class="line">    if (event.source === frames[&apos;myPostMessage&apos;]) &#123;</span><br><span class="line">        console.log(event)</span><br><span class="line">        var data = /^#localStorage#(\d+)(null)?#([\S\s]*)/.exec(event.data);</span><br><span class="line">        if (data) &#123;</span><br><span class="line">            if (callbacks[data[1]]) &#123;</span><br><span class="line">                callbacks[data[1]](data[2] === &apos;null&apos; ? null : data[3]);</span><br><span class="line">            &#125;</span><br><span class="line">            delete callbacks[data[1]];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, false);</span><br><span class="line"></span><br><span class="line">var domain = &apos;*&apos;;</span><br><span class="line">// 增加</span><br><span class="line">function LSsetItem(key, value) &#123;</span><br><span class="line">    var obj = &#123;</span><br><span class="line">        setItem: key,</span><br><span class="line">        value: value</span><br><span class="line">    &#125;;</span><br><span class="line">    frames[&apos;myPostMessage&apos;].postMessage(JSON.stringify(obj), domain);</span><br><span class="line">&#125;</span><br><span class="line">// 获取</span><br><span class="line">function LSgetItem(key, callback) &#123;</span><br><span class="line">    var identifier = new Date().getTime();</span><br><span class="line">    var obj = &#123;</span><br><span class="line">        identifier: identifier,</span><br><span class="line">        getItem: key</span><br><span class="line">    &#125;;</span><br><span class="line">    callbacks[identifier] = callback;</span><br><span class="line">    frames[&apos;myPostMessage&apos;].postMessage(JSON.stringify(obj), domain);</span><br><span class="line">&#125;</span><br><span class="line">// 删除</span><br><span class="line">function LSremoveItem(key) &#123;</span><br><span class="line">    var obj = &#123;</span><br><span class="line">        removeItem: key</span><br><span class="line">    &#125;;</span><br><span class="line">    frames[&apos;myPostMessage&apos;].postMessage(JSON.stringify(obj), domain);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- localhost:10001 --&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">window.addEventListener(&apos;message&apos;, function(event) &#123;</span><br><span class="line">    console.log(&apos;Receiver debugging&apos;, event);</span><br><span class="line">    if (event.origin == &apos;http://localhost:10000&apos;) &#123;</span><br><span class="line">    var data = JSON.parse(event.data);</span><br><span class="line">    if (&apos;setItem&apos; in data) &#123;</span><br><span class="line">        localStorage.setItem(data.setItem, data.value);</span><br><span class="line">    &#125; else if (&apos;getItem&apos; in data) &#123;</span><br><span class="line">        var gotItem = localStorage.getItem(data.getItem);</span><br><span class="line">        event.source.postMessage(</span><br><span class="line">        &apos;#localStorage#&apos; + data.identifier +</span><br><span class="line">        (gotItem === null ? &apos;null#&apos; : &apos;#&apos; + gotItem),</span><br><span class="line">        event.origin</span><br><span class="line">        );</span><br><span class="line">    &#125; else if (&apos;removeItem&apos; in data) &#123;</span><br><span class="line">        localStorage.removeItem(data.removeItem);</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, false);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+注意Safari一下，会报错：<br>Blocked a frame with origin “<a href="http://localhost:10001”" target="_blank" rel="noopener">http://localhost:10001”</a> from accessing a frame with origin “<a href="http://localhost:10000“" target="_blank" rel="noopener">http://localhost:10000“</a>. Protocols, domains, and ports must match.<br>避免该错误，可以在Safari浏览器中勾选开发菜单==&gt;停用跨域限制。或者只能使用服务器端转存的方式实现，因为Safari浏览器默认只支持CORS跨域请求。</li>
+<li><strong>方式六：修改document.domain跨子域</strong><br>前提条件：这两个域名必须属于同一个基础域名!而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域，所以只能跨子域<br>在根域范围内，允许把domain属性的值设置为它的上一级域。例如，在”aaa.xxx.com”域内，可以把domain设置为 “xxx.com” 但不能设置为 “xxx.org” 或者”com”。<br>现在存在两个域名aaa.xxx.com和bbb.xxx.com。在aaa下嵌入bbb的页面，由于其document.name不一致，无法在aaa下操作bbb的js。可以在aaa和bbb下通过js将document.name = ‘xxx.com’;设置一致，来达到互相访问的作用。</li>
+<li><strong>方式七：WebSocket</strong><br>WebSocket protocol 是HTML5一种新的协议。它实现了浏览器与服务器全双工通信，同时允许跨域通讯，是server push技术的一种很棒的实现。相关文章，请查看：WebSocket、WebSocket-SockJS<br>需要注意：WebSocket对象不支持DOM 2级事件侦听器，必须使用DOM 0级语法分别定义各个事件。</li>
+<li><strong>方式八：代理</strong><br>同源策略是针对浏览器端进行的限制，可以通过服务器端来解决该问题<br>DomainA客户端（浏览器） ==&gt; DomainA服务器 ==&gt; DomainB服务器 ==&gt; DomainA客户端（浏览器）</li>
+</ul>
+</li>
+<li><h4 id="说一下JSONP实现原理？"><a href="#说一下JSONP实现原理？" class="headerlink" title="说一下JSONP实现原理？"></a>说一下JSONP实现原理？</h4><p>  jsonp 即 json+padding，动态创建script标签，利用script标签的src属性可以获取任何域下的js脚本，通过这个特性(也可以说漏洞)，服务器端不在返货json格式，而是返回一段调用某个函数的js代码，在src中进行了调用，这样实现了跨域。</p>
+</li>
+</ul>
+</div><div class="tags"></div><div class="post-nav"><a class="pre" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8BMySQL/">互联网求职——MySQL</a><a class="next" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8BJAVA%E5%9F%BA%E7%A1%80%E7%AF%87/">互联网求职——Java基础</a></div><div id="vcomment"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script><script>var notify = 'false' ? true : false;
+var verify = 'false' ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'HMCVMu79BXKku7a95jqPbsfq-gzGzoHsz',
+  appKey:'jvqP2PXthjron3FtNuTqIm8F',
+  placeholder:'Just so so',
+  avatar:'mm',
+  guest_info:guest_info,
+  pageSize:'10'
+})</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C/">互联网求职</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87/">基础学习篇</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E8%AE%B0/">手记</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/11/26/Java%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7-Junit/">单元测试工具-Junit</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/DOS%E5%91%BD%E4%BB%A4/">DOS常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/%E6%AF%8F%E5%A4%A9%E4%B8%80%E6%A2%97/">每天一梗</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/23/Redis%E5%85%A5%E9%97%A8%E7%AF%87/">Redis入门篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/23/%E6%AF%8F%E6%97%A5%E5%B7%A5%E4%BD%9C%E5%86%85%E5%AE%B9%E6%B8%85%E5%8D%95/">每日工作内容清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/23/IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">IDEA使用记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E4%B9%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">互联网求职——设计模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8B%E4%B8%AD%E9%97%B4%E4%BB%B6/">互联网求职——中间件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E9%A1%B9%E7%9B%AE%E7%AF%87/">互联网求职——项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/%E4%BA%92%E8%81%94%E7%BD%91%E6%B1%82%E8%81%8C%E6%8A%80%E6%9C%AF%E7%AF%87%E4%B9%8BLinux%E7%AF%87/">互联网求职——LINUX</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">XiexjCoder Blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
