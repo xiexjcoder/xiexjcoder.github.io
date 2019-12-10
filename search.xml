@@ -10,14 +10,6 @@
       </categories>
   </entry>
   <entry>
-    <title>gitlab服务器搭建</title>
-    <url>/2019/12/04/gitlab%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1>]]></content>
-      <categories>
-        <category>基础学习篇</category>
-      </categories>
-  </entry>
-  <entry>
     <title>微信公众号开发</title>
     <url>/2019/12/04/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/</url>
     <content><![CDATA[<h1 id="微信公众号介绍"><a href="#微信公众号介绍" class="headerlink" title="微信公众号介绍"></a>微信公众号介绍</h1><ol>
@@ -35,6 +27,14 @@
 <h1 id="开发者模式介绍"><a href="#开发者模式介绍" class="headerlink" title="开发者模式介绍"></a>开发者模式介绍</h1><h1 id="开发环境搭建"><a href="#开发环境搭建" class="headerlink" title="开发环境搭建"></a>开发环境搭建</h1><h1 id="百度BAE的使用"><a href="#百度BAE的使用" class="headerlink" title="百度BAE的使用"></a>百度BAE的使用</h1></li>
 </ol>
 ]]></content>
+      <categories>
+        <category>基础学习篇</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>gitlab服务器搭建</title>
+    <url>/2019/12/04/gitlab%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1>]]></content>
       <categories>
         <category>基础学习篇</category>
       </categories>
@@ -300,8 +300,19 @@
   </entry>
   <entry>
     <title>IDEA使用记录</title>
-    <url>/2019/11/23/IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
-    <content><![CDATA[<h1 id="IDEA-Java相关开发配置"><a href="#IDEA-Java相关开发配置" class="headerlink" title="IDEA Java相关开发配置"></a>IDEA Java相关开发配置</h1><h2 id="IntelliJ-IDEA-配置JDK"><a href="#IntelliJ-IDEA-配置JDK" class="headerlink" title="IntelliJ IDEA 配置JDK"></a>IntelliJ IDEA 配置JDK</h2><ul>
+    <url>/2019/11/23/IDEA%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="IDEA-Java相关开发配置"><a href="#IDEA-Java相关开发配置" class="headerlink" title="IDEA Java相关开发配置"></a>IDEA Java相关开发配置</h1><h2 id="编码设置"><a href="#编码设置" class="headerlink" title="编码设置"></a>编码设置</h2><ul>
+<li>File -&gt; Settings -&gt; Editor -&gt; File Encodings</li>
+<li>File -&gt; Other Settings -&gt; Default Settings -&gt; Editor -&gt; File Encodings</li>
+<li>将项目中的.idea文件夹中的encodings.xml文件中的编码格式改为uft-8</li>
+<li>File -&gt; Settings -&gt; Build,Execution,Deployment -&gt; Compiler -&gt; Java Compiler ：<br>设置 Additional command line parameters选项为 -encoding utf-8</li>
+<li>如使用tomcat，可以采用以下方式设置编码：<ul>
+<li>打开Run/Debug Configuration,选择你的tomcat/defaults</li>
+<li>在 TomEE Server/Tomcat Server -&gt; Local -&gt; VM options 设置为 -Dfile.encoding=UTF-8 ，重启tomcat</li>
+</ul>
+</li>
+</ul>
+<h2 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h2><ul>
 <li>启动页面中配置JDK<ul>
 <li>在IDEA启动页面中，下拉Configure，选择Project Defaults – Project Structure</li>
 <li>在打开的窗口中，点击New按钮，并选择JDK</li>
@@ -325,19 +336,172 @@
 <li>切换项目的JDK<ul>
 <li>打开IDEA集成开发环境工具，点击：File–Project Structure (Ctrl + shift + Alt + s);</li>
 <li>在打开的窗口中，选择Project，然后在详情页面中，选择按钮New，并点击JDK选项;</li>
-<li>选择对应的JDK版本，点击OK按钮;<h2 id="IntelliJ-IDEA-配置MAVEN"><a href="#IntelliJ-IDEA-配置MAVEN" class="headerlink" title="IntelliJ IDEA 配置MAVEN"></a>IntelliJ IDEA 配置MAVEN</h2></li>
+<li>选择对应的JDK版本，点击OK按钮;</li>
 </ul>
 </li>
 </ul>
-<h1 id="idea快捷键："><a href="#idea快捷键：" class="headerlink" title="idea快捷键："></a>idea快捷键：</h1><h2 id="编辑快捷键"><a href="#编辑快捷键" class="headerlink" title="编辑快捷键"></a>编辑快捷键</h2><p>编辑快捷 键    介绍<br>Tab    缩进 / 配合代码提示实现自动完成<br>Shift + Tab    取消缩进<br>Ctrl + Z    撤销<br>Ctrl + Shift + Z    取消撤销<br>Ctrl + Y    删除光标所在行 或 删除选中的行<br>Ctrl + X    剪切光标所在行 或 剪切选择内容<br>Ctrl + C    复制光标所在行 或 复制选择内容<br>Ctrl + V    在光标所在处粘贴已复制内容<br>Ctrl + Shift + V    弹出历史复制内容<br>Ctrl + D    复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面<br>Ctrl + W    递进式选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展选中范围<br>Ctrl + Shift + W    递进式取消选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展取消选中范围<br>Ctrl + /    注释光标所在行代码，会根据当前不同文件类型使用不同的注释符号<br>Ctrl + Shift + /    代码块注释<br>Ctrl + +    展开代码<br>Ctrl + -    折叠代码<br>Ctrl + Shift + +    展开所有代码<br>Ctrl + Shift + -    折叠所有代码<br>Alt +    鼠标左键上下拖动 多行编辑<br>Alt + Shift +    鼠标左键多行选择 自定义多行编辑<br>Ctrl + Shift +    前方向键 光标放在方法名上，将方法移动到上一个方法前面，调整方法排序。光标放在普通代码行上，将改行上移<br>Ctrl + Shift +    后方向键 光标放在方法名上，将方法移动到下一个方法前面，调整方法排序。光标放在普通代码行上，将改行下移</p>
-<h2 id="查找替换快捷键"><a href="#查找替换快捷键" class="headerlink" title="查找替换快捷键"></a>查找替换快捷键</h2><p>查找替换快捷键    介绍<br>Ctrl + F    在当前文件中进行文本查找<br>Ctrl + Shift + F    在整个项目或者指定目录内的文件中进行文本查找<br>Ctrl + N    根据输入的 类名 查找类文件<br>Ctrl + Shift + N    通过文件名定位，打开文件 / 目录，打开目录需要在输入的内容后面多加一个正斜杠<br>Ctrl + Shift + Alt + N    查找 变量 / 方法<br>双击Shift    弹出 Search Everywhere 弹出层<br>Alt + F3    高亮显示所有该选中文本，按 Enter 选中下一个，按 Esc 高亮消失，推荐使用Ctrl+F<br>Ctrl + Shift + F7    高亮显示所有该选中文本，按 Esc 高亮消失，推荐使用Ctrl+F 或 Alt + F3<br>Ctrl + E    显示最近打开的文件记录列表<br>Ctrl + Shift + E    显示最近修改的文件列表的弹出层<br>Ctrl + F12    弹出当前文件结构层（如查看当前类的所有方法），可以在弹出的层上直接输入，进行筛选<br>Ctrl + H    显示当前类的继承层次结构（包含其父类和子类）<br>Ctrl + R    在当前文件进行文本替换<br>Ctrl + Shift + R    根据输入内容替换对应内容，范围为整个项目 或 指定目录内文件<br>光标定位快捷键    介绍<br>Ctrl + Home    跳到文件头<br>Ctrl + End    跳到文件尾<br>Ctrl + Shift + Backspace    退回到上次修改的地方<br>Ctrl + Alt + 左方向键    退回到上一个操作的地方<br>Ctrl + Alt + 右方向键    前进到上一个操作的地方<br>Alt + 前方向键    当前光标跳转到当前文件的前一个方法名位置<br>Alt + 后方向键    当前光标跳转到当前文件的后一个方法名位置<br>窗口导航快捷键<br>窗口导航快捷键    介绍<br>Ctrl + Tab    编辑窗口切换，如果在切换的过程又加按上delete，则是关闭对应选中的窗口<br>Alt + 1,2,3…9    显示对应数值的选项卡，其中 1 是 Project 用得最多<br>ESC    从工具窗口进入代码文件窗口，或退出打开的窗口<br>代码自动档快捷键<br>代码自动档快捷键    介绍<br>Ctrl + Space    基础代码补全，默认在 Windows 系统上被输入法占用，需要进行修改，建议修改为 Ctrl + 逗号<br>Ctrl + Shift + Space    智能代码提示<br>Ctrl + J    显示与之匹配的实时代码模板<br>Shift + Enter    开始新一行。光标所在行下空出一行，光标定位到新行位置<br>Ctrl + Shift + Enter    自动结束代码，行末自动添加 分号/括号/引号 等，if/for等会自动添加所需结构<br>Ctrl + Alt + Enter    光标所在行上空出一行，光标定位到新行<br>Ctrl + Enter    智能分隔行<br>Ctrl + Shift + J    自动将下一行合并到当前行末尾<br>Ctrl + Shift + U    对选中的代码进行大 / 小写轮流转换<br>Ctrl + Alt + L    格式化代码，可以对当前文件和整个包目录使用<br>Ctrl + Alt + O    优化导入的类，可以对当前文件和整个包目录使用<br>Alt + Insert    在类中使用可以自动生成代码（如 getter/setter，构造函数，toString()<br>Ctrl + Alt + T    对选中的代码弹出环绕选项弹出层<br>Ctrl + Shift + T    对当前类生成单元测试类，如果已经存在的单元测试类则可以进行选择<br>Ctrl + O    选择可重写的方法<br>Ctrl + I    选择可继承的方法<br>代码重构快捷键<br>代码重构快捷键    介绍<br>Shift + F6    对 文件夹 / 文件 / 类 / 方法 / 变量 (重构)重命名<br>Ctrl + Shift + Alt + T    重构功能大汇总，叫做 Refactor This<br>代码追踪快捷键<br>代码追踪快捷键    介绍<br>Ctrl + B    进入光标所在的方法/变量的接口或定义处，等效于 Ctrl + 左键单击<br>Alt + F7    查找光标所在的 方法 / 变量 / 类 被使用的地方<br>Ctrl + Alt + F7    查找光标所在的 方法 / 变量 / 类 被使用的地方，用弹出框的方式找出来<br>编译调试运行快捷键<br>编译调试运行快捷键    介绍<br>Ctrl + F9    执行 Make Project 操作，编译所有<br>Ctrl + Shift + F9    编译选中的 文件 / 包 / Module<br>Shift + F10    等效于点击工具栏的 Run 按钮<br>Alt + Shift + F10    弹出 Run 的可选择菜单<br>Shift + F9    等效于点击工具栏的 Debug 按钮<br>Alt + Shift + F9    弹出 Debug 的可选择菜单<br>F7    在 Debug 模式下，进入下一步，即 Step into。如果当前行断点是一个方法，则进入当前方法体内，如果该方法体还有方法，则不会进入该内嵌的方法中<br>F8    在 Debug 模式下，进入下一步，即 Step over。如果当前行断点是一个方法，则不进入当前方法体内<br>F9    在 Debug 模式下，恢复程序运行，即 Continue。但是如果该断点下面代码还有断点则停在下一个断点上<br>F2    跳转到下一个高亮错误 或 警告位置<br>Shift + F2    跳转到上一个高亮错误 或 警告位置<br>Alt + Enter    IntelliJ IDEA 根据光标所在问题，提供快速修复选择，光标放在的位置不同提示的结果也不同<br>其他<br>其他快捷键    介绍<br>Ctrl + Alt + S    打开 IntelliJ IDEA 系统设置<br>Ctrl + Shift + Alt + S    打开当前项目设置<br>Ctrl + Alt + Y    同步、刷新<br>Shift + 滚轮前后滚动    当前文件的横向滚动轴滚动<br>Ctrl + 左键单击    在打开的文件标题上，弹出该文件路径</p>
+<h2 id="配置MAVEN"><a href="#配置MAVEN" class="headerlink" title="配置MAVEN"></a>配置MAVEN</h2><ul>
+<li>File -&gt; Settings -&gt; Build,Execution,Deployment -&gt; Build Tools -&gt; Maven<ul>
+<li>设置 Maven home directory eg: D:/software/apache-maven-3.3.9</li>
+<li>User setting file  eg: D:\software\apache-maven-3.3.9\repository\项目名\settings.xml</li>
+<li>Local repository eg:D:\software\apache-maven-3.3.9\repository\项目名</li>
+</ul>
+</li>
+<li>File -&gt; Other Settings -&gt; Default Settings -&gt; Build,Execution,Deployment -&gt; Build Tools -&gt; Maven<ul>
+<li>设置 Maven home directory eg: D:/software/apache-maven-3.3.9</li>
+<li>User setting file  eg: D:\software\apache-maven-3.3.9\repository\项目名\settings.xml</li>
+<li>Local repository eg:D:\software\apache-maven-3.3.9\repository\项目名</li>
+</ul>
+</li>
+</ul>
+<h2 id="配置git-or-svn"><a href="#配置git-or-svn" class="headerlink" title="配置git or svn"></a>配置git or svn</h2><ul>
+<li>Git ：<ul>
+<li>File -&gt; Setting -&gt; Version Control -&gt; Git -&gt; Path to Git executable 选择git安装后的git.exe文件，然后点击Test，测试是否设置成功</li>
+<li>File -&gt; Other Settings -&gt; Default Settings -&gt;  Version Control -&gt; Git -&gt; Path to Git executable 选择git安装后的git.exe文件，然后点击Test，测试是否设置成功</li>
+</ul>
+</li>
+<li>svn :<ul>
+<li>File -&gt; Settings -&gt; Version Control -&gt; Subversion，选择svn安装后的svn.ext文件</li>
+<li>File -&gt; Other Settings -&gt; Default Settings -&gt;  Version Control -&gt; Subversion，选择svn安装后的svn.ext文件</li>
+</ul>
+</li>
+</ul>
+<h1 id="idea快捷键："><a href="#idea快捷键：" class="headerlink" title="idea快捷键："></a>idea快捷键：</h1><h2 id="编辑快捷键"><a href="#编辑快捷键" class="headerlink" title="编辑快捷键"></a>编辑快捷键</h2><ul>
+<li>编辑快捷 键    介绍<ul>
+<li>Tab    缩进 / 配合代码提示实现自动完成</li>
+<li>Shift + Tab    取消缩进</li>
+<li>Ctrl + Z    撤销</li>
+<li>Ctrl + Shift + Z    取消撤销</li>
+<li>Ctrl + Y    删除光标所在行 或 删除选中的行</li>
+<li>Ctrl + X    剪切光标所在行 或 剪切选择内容</li>
+<li>Ctrl + C    复制光标所在行 或 复制选择内容</li>
+<li>Ctrl + V    在光标所在处粘贴已复制内容</li>
+<li>Ctrl + Shift + V    弹出历史复制内容</li>
+<li>Ctrl + D    复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面</li>
+<li>Ctrl + W    递进式选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展选中范围</li>
+<li>Ctrl + Shift + W    递进式取消选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展取消选中范围</li>
+<li>Ctrl + /    注释光标所在行代码，会根据当前不同文件类型使用不同的注释符号</li>
+<li>Ctrl + Shift + /    代码块注释</li>
+<li>Ctrl + +    展开代码</li>
+<li>Ctrl + -    折叠代码</li>
+<li>Ctrl + Shift + +    展开所有代码</li>
+<li>Ctrl + Shift + -    折叠所有代码</li>
+<li>Alt +    鼠标左键上下拖动 多行编辑</li>
+<li>Alt + Shift +    鼠标左键多行选择 自定义多行编辑</li>
+<li>Ctrl + Shift +    前方向键 光标放在方法名上，将方法移动到上一个方法前面，调整方法排序。光标放在普通代码行上，将改行上移</li>
+<li>Ctrl + Shift +    后方向键 光标放在方法名上，将方法移动到下一个方法前面，调整方法排序。光标放在普通代码行上，将改行下移</li>
+</ul>
+</li>
+</ul>
+<h2 id="查找替换快捷键"><a href="#查找替换快捷键" class="headerlink" title="查找替换快捷键"></a>查找替换快捷键</h2><ul>
+<li><p>查找替换快捷键    介绍</p>
+<ul>
+<li>Ctrl + F    在当前文件中进行文本查找</li>
+<li>Ctrl + Shift + F    在整个项目或者指定目录内的文件中进行文本查找</li>
+<li>Ctrl + N    根据输入的 类名 查找类文件</li>
+<li>Ctrl + Shift + N    通过文件名定位，打开文件 / 目录，打开目录需要在输入的内容后面多加一个正斜杠</li>
+<li>Ctrl + Shift + Alt + N    查找 变量 / 方法</li>
+<li>双击Shift    弹出 Search Everywhere 弹出层</li>
+<li>Alt + F3    高亮显示所有该选中文本，按 Enter 选中下一个，按 Esc 高亮消失，推荐使用Ctrl+F</li>
+<li>Ctrl + Shift + F7    高亮显示所有该选中文本，按 Esc 高亮消失，推荐使用Ctrl+F 或 Alt + F3</li>
+<li>Ctrl + E    显示最近打开的文件记录列表</li>
+<li>Ctrl + Shift + E    显示最近修改的文件列表的弹出层</li>
+<li>Ctrl + F12    弹出当前文件结构层（如查看当前类的所有方法），可以在弹出的层上直接输入，进行筛选</li>
+<li>Ctrl + H    显示当前类的继承层次结构（包含其父类和子类）</li>
+<li>Ctrl + R    在当前文件进行文本替换</li>
+<li>Ctrl + Shift + R    根据输入内容替换对应内容，范围为整个项目 或 指定目录内文件</li>
+</ul>
+</li>
+<li><p>光标定位快捷键    介绍</p>
+<ul>
+<li>Ctrl + Home    跳到文件头</li>
+<li>Ctrl + End    跳到文件尾</li>
+<li>Ctrl + Shift + Backspace    退回到上次修改的地方</li>
+<li>Ctrl + Alt + 左方向键    退回到上一个操作的地方</li>
+<li>Ctrl + Alt + 右方向键    前进到上一个操作的地方</li>
+<li>Alt + 前方向键    当前光标跳转到当前文件的前一个方法名位置</li>
+<li>Alt + 后方向键    当前光标跳转到当前文件的后一个方法名位置</li>
+</ul>
+</li>
+</ul>
+<h2 id="窗口导航快捷键"><a href="#窗口导航快捷键" class="headerlink" title="窗口导航快捷键"></a>窗口导航快捷键</h2><ul>
+<li>窗口导航快捷键    介绍<ul>
+<li>Ctrl + Tab    编辑窗口切换，如果在切换的过程又加按上delete，则是关闭对应选中的窗口</li>
+<li>Alt + 1,2,3…9    显示对应数值的选项卡，其中 1 是 Project 用得最多</li>
+<li>ESC    从工具窗口进入代码文件窗口，或退出打开的窗口</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码自动档快捷键"><a href="#代码自动档快捷键" class="headerlink" title="代码自动档快捷键"></a>代码自动档快捷键</h2><ul>
+<li>代码自动档快捷键    介绍<ul>
+<li>Ctrl + Space    基础代码补全，默认在 Windows 系统上被输入法占用，需要进行修改，建议修改为 Ctrl + 逗号</li>
+<li>Ctrl + Shift + Space    智能代码提示</li>
+<li>Ctrl + J    显示与之匹配的实时代码模板</li>
+<li>Shift + Enter    开始新一行。光标所在行下空出一行，光标定位到新行位置</li>
+<li>Ctrl + Shift + Enter    自动结束代码，行末自动添加 分号/括号/引号 等，if/for等会自动添加所需结构</li>
+<li>Ctrl + Alt + Enter    光标所在行上空出一行，光标定位到新行</li>
+<li>Ctrl + Enter    智能分隔行</li>
+<li>Ctrl + Shift + J    自动将下一行合并到当前行末尾</li>
+<li>Ctrl + Shift + U    对选中的代码进行大 / 小写轮流转换</li>
+<li>Ctrl + Alt + L    格式化代码，可以对当前文件和整个包目录使用</li>
+<li>Ctrl + Alt + O    优化导入的类，可以对当前文件和整个包目录使用</li>
+<li>Alt + Insert    在类中使用可以自动生成代码（如 getter/setter，构造函数，toString()</li>
+<li>Ctrl + Alt + T    对选中的代码弹出环绕选项弹出层</li>
+<li>Ctrl + Shift + T    对当前类生成单元测试类，如果已经存在的单元测试类则可以进行选择</li>
+<li>Ctrl + O    选择可重写的方法</li>
+<li>Ctrl + I    选择可继承的方法</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码重构快捷键"><a href="#代码重构快捷键" class="headerlink" title="代码重构快捷键"></a>代码重构快捷键</h2><ul>
+<li>代码重构快捷键    介绍<ul>
+<li>Shift + F6    对 文件夹 / 文件 / 类 / 方法 / 变量 (重构)重命名</li>
+<li>Ctrl + Shift + Alt + T    重构功能大汇总，叫做 Refactor This</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码追踪快捷键"><a href="#代码追踪快捷键" class="headerlink" title="代码追踪快捷键"></a>代码追踪快捷键</h2><ul>
+<li>代码追踪快捷键    介绍<ul>
+<li>Ctrl + B    进入光标所在的方法/变量的接口或定义处，等效于 Ctrl + 左键单击</li>
+<li>Alt + F7    查找光标所在的 方法 / 变量 / 类 被使用的地方</li>
+<li>Ctrl + Alt + F7    查找光标所在的 方法 / 变量 / 类 被使用的地方，用弹出框的方式找出来</li>
+</ul>
+</li>
+</ul>
+<h2 id="编译调试运行快捷键"><a href="#编译调试运行快捷键" class="headerlink" title="编译调试运行快捷键"></a>编译调试运行快捷键</h2><ul>
+<li>编译调试运行快捷键    介绍<ul>
+<li>Ctrl + F9    执行 Make Project 操作，编译所有</li>
+<li>Ctrl + Shift + F9    编译选中的 文件 / 包 / Module</li>
+<li>Shift + F10    等效于点击工具栏的 Run 按钮</li>
+<li>Alt + Shift + F10    弹出 Run 的可选择菜单</li>
+<li>Shift + F9    等效于点击工具栏的 Debug 按钮</li>
+<li>Alt + Shift + F9    弹出 Debug 的可选择菜单</li>
+<li>F7    在 Debug 模式下，进入下一步，即 Step into。如果当前行断点是一个方法，则进入当前方法体内，如果该方法体还有方法，则不会进入该内嵌的方法中</li>
+<li>F8    在 Debug 模式下，进入下一步，即 Step over。如果当前行断点是一个方法，则不进入当前方法体内</li>
+<li>F9    在 Debug 模式下，恢复程序运行，即 Continue。但是如果该断点下面代码还有断点则停在下一个断点上</li>
+<li>F2    跳转到下一个高亮错误 或 警告位置</li>
+<li>Shift + F2    跳转到上一个高亮错误 或 警告位置</li>
+<li>Alt + Enter    IntelliJ IDEA 根据光标所在问题，提供快速修复选择，光标放在的位置不同提示的结果也不同</li>
+</ul>
+</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>其他快捷键    介绍<ul>
+<li>Ctrl + Alt + S    打开 IntelliJ IDEA 系统设置</li>
+<li>Ctrl + Shift + Alt + S    打开当前项目设置</li>
+<li>Ctrl + Alt + Y    同步、刷新</li>
+<li>Shift + 滚轮前后滚动    当前文件的横向滚动轴滚动</li>
+<li>Ctrl + 左键单击    在打开的文件标题上，弹出该文件路径</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>工具使用</category>
       </categories>
   </entry>
   <entry>
-    <title>项目管理利器</title>
+    <title>项目管理利器-MAVEN</title>
     <url>/2019/11/19/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%88%A9%E5%99%A8MAVEN/</url>
     <content><![CDATA[<h1 id="项目管理利器-maven（windows7-jdk1-8）"><a href="#项目管理利器-maven（windows7-jdk1-8）" class="headerlink" title="项目管理利器 maven（windows7 jdk1.8）"></a>项目管理利器 maven（windows7 jdk1.8）</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
 <li>Maven(Apache)是一个软件项目管理和理解工具。基于项目对象模型（POM）的概念，Maven可以从中央信息管理项目的构建，报告和文档。<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2></li>
@@ -402,7 +566,7 @@
 <!-- 公司或者组织的唯一标志，并且配置时生成的路径也是由此生成， 如com.xie.project-group，maven会将该项目打成的jar包放本地路径：/com/xie/project-group -->
 <groupId> … &lt;/ groupId&gt;<!-- 项目的唯一ID，一个groupId下面可能多个项目，需要artifactId来区分的 -->
 <artifactId> … &lt;/ artifactId&gt;<!-- 版本号 -->
-&lt;!– 第一个0表示大版本号，第二个0表示分支版本号，第三个0表示小版本号<br>  SNAPSHOT 快照<br>  ALPHA 内部测试<br>  BETA 公测<br>  RELEASE 稳定<br>  GA 正式发布</li>
+&lt;!– 第一个0表示大版本号，第二个0表示分支版本号，第三个0表示小版本号<br>  SNAPSHOT 快照<br>  ALPHA 内部测试<br>  BETA 公测<br>  RELEASE 稳定<br>  GA 正式发布</artifactId></groupId></li>
 <li>-&gt;<br><version> … &lt;/ version&gt;<!--默认jar，也可以是pom，jar，maven-plugin，ejb，war，ear，rar-->
 <packaging> … &lt;/ packaging&gt;<!--依赖项-->
 <dependencies> … &lt;/ dependencies&gt;<br><parent> … &lt;/ parent&gt;<br><dependencyManagement> … &lt;/ dependencyManagement&gt;<br><modules> … &lt;/ modules&gt;<br><properties> … &lt;/ properties&gt;<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+ 构建设置</span><br></pre></td></tr></table></figure>
@@ -414,7 +578,7 @@
 <licenses> … &lt;/ licenses&gt;<!--组织信息-->
 <organization> … &lt;/ organization&gt;<!--开发人员信息-->
 <developers> … &lt;/ developers&gt;<br><contributors> … &lt;/ contributors&gt;<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">+ 环境设置</span><br></pre></td></tr></table></figure>
-<issueManagement> … &lt;/ issueManagement&gt;<br><ciManagement> … &lt;/ ciManagement&gt;<br><mailingLists> … &lt;/ mailingLists&gt;<br><scm> … &lt;/ scm&gt;<br><prerequisites> … &lt;/ prerequisites<br><repositories> … &lt;/ repositories&gt;<br><pluginRepositories> … &lt;/ pluginRepositories&gt;<br><distributionManagement> … &lt;/ distributionManagement&gt;<br><profiles> … &lt;/ profiles&gt;<pre><code></code></pre></li>
+<issueManagement> … &lt;/ issueManagement&gt;<br><ciManagement> … &lt;/ ciManagement&gt;<br><mailingLists> … &lt;/ mailingLists&gt;<br><scm> … &lt;/ scm&gt;<br><prerequisites> … &lt;/ prerequisites<br><repositories> … &lt;/ repositories&gt;<br><pluginRepositories> … &lt;/ pluginRepositories&gt;<br><distributionManagement> … &lt;/ distributionManagement&gt;<br><profiles> … &lt;/ profiles&gt;<pre><code></code></pre></profiles></distributionManagement></pluginRepositories></repositories></prerequisites></scm></mailingLists></ciManagement></issueManagement></contributors></developers></organization></licenses></inceptionYear></url></description></name></reporting></build></properties></modules></dependencyManagement></parent></dependencies></packaging></version></li>
 </ul>
 </li>
 </ul>
