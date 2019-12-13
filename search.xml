@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>API技术文档工具-ShowDoc</title>
+    <url>/2019/12/12/API%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E5%B7%A5%E5%85%B7-ShowDoc/</url>
+    <content><![CDATA[<p>VMware -&gt; ubuntu -&gt; docker -&gt; showdoc</p>
+]]></content>
+      <categories>
+        <category>基础学习篇</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>原型图设计工具-Mockplus</title>
+    <url>/2019/12/11/%E5%8E%9F%E5%9E%8B%E5%9B%BE%E8%AE%BE%E8%AE%A1%E5%B7%A5%E5%85%B7-Mockplus/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Mockplus（摹客）是一款简洁快速的原型图设计工具。适合软件团队、个人在软件开发的设计阶段使用。其低保真、无需学习、快速上手、功能够用。并能够很好地表达自己的设计。</p>
+]]></content>
+      <categories>
+        <category>工具使用</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Docker入门篇</title>
     <url>/2019/12/08/Docker%E5%85%A5%E9%97%A8%E7%AF%87/</url>
     <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。</p>
@@ -312,6 +330,10 @@
 </ul>
 </li>
 </ul>
+<h2 id="ASCII-码转换"><a href="#ASCII-码转换" class="headerlink" title="ASCII 码转换"></a>ASCII 码转换</h2><ul>
+<li>File -&gt; Settings -&gt; File encoding :勾选 Transparent native-to-ascii conversion</li>
+<li>File -&gt; Other Settings -&gt; Default Settings -&gt; File encoding :勾选 Transparent native-to-ascii conversion</li>
+</ul>
 <h2 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h2><ul>
 <li><strong>启动页面中配置JDK</strong><ul>
 <li>在IDEA启动页面中，下拉Configure，选择Project Defaults – Project Structure</li>
@@ -366,7 +388,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="idea快捷键："><a href="#idea快捷键：" class="headerlink" title="idea快捷键："></a>idea快捷键：</h1><h2 id="编辑快捷键"><a href="#编辑快捷键" class="headerlink" title="编辑快捷键"></a>编辑快捷键</h2><ul>
+<h2 id="配置tomcat"><a href="#配置tomcat" class="headerlink" title="配置tomcat"></a>配置tomcat</h2><h1 id="idea快捷键："><a href="#idea快捷键：" class="headerlink" title="idea快捷键："></a>idea快捷键：</h1><h2 id="编辑快捷键"><a href="#编辑快捷键" class="headerlink" title="编辑快捷键"></a>编辑快捷键</h2><ul>
 <li><strong>编辑快捷键    介绍</strong><ul>
 <li>Tab    缩进 / 配合代码提示实现自动完成</li>
 <li>Shift + Tab    取消缩进</li>
