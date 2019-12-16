@@ -7,17 +7,14 @@
 <h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><ul>
 <li>win7</li>
 <li>VMware 12 <a href="https://my.vmware.com/cn/web/vmware/downloads" target="_blank" rel="noopener">下载</a></li>
-<li>ubuntu镜像 ubuntu-16.04-desktop-amd64.iso <a href="https://ubuntu.com/download/desktop" target="_blank" rel="noopener">下载</a></li>
+<li>ubuntu镜像 ubuntu-16.04-desktop-amd64.iso <a href="https://cn.ubuntu.com/download" target="_blank" rel="noopener">下载</a></li>
 </ul>
-<h2 id="创建第一个虚拟机-Ubuntu"><a href="#创建第一个虚拟机-Ubuntu" class="headerlink" title="创建第一个虚拟机-Ubuntu"></a>创建第一个虚拟机-Ubuntu</h2><ul>
-<li>在VMware中安装Ubuntu</li>
-</ul>
-<ol>
-<li>选择 文件 -&gt; 新建虚拟机 / Ctrl + N / 主页 -&gt; 创建新的虚拟机<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/1.png" class=""></li>
-<li>新建虚拟机向导：选择稍后安装操作系统，点击下一步<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/2.png" class=""></li>
-<li>客户机操作系统：选择Linux 版本选择Ubuntu 64位<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/3.png" class=""></li>
-<li>命名虚拟机名称：Ubuntu_20191216 ,位置：点击浏览选择对应存储位置，点击下一步。<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/4.png" class="">
-（建议按照不同系统、不同功能分类设置虚拟机名称以及存储位置）<ul>
+<h2 id="创建第一个虚拟机-Ubuntu"><a href="#创建第一个虚拟机-Ubuntu" class="headerlink" title="创建第一个虚拟机-Ubuntu"></a>创建第一个虚拟机-Ubuntu</h2><ol>
+<li><strong>选择 文件 -&gt; 新建虚拟机 / Ctrl + N / 主页 -&gt; 创建新的虚拟机</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/1.png" class=""></li>
+<li><strong>新建虚拟机向导：选择稍后安装操作系统，点击下一步</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/2.png" class=""></li>
+<li><strong>客户机操作系统：选择Linux 版本选择Ubuntu 64位</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/3.png" class=""></li>
+<li><strong>命名虚拟机名称：Ubuntu_20191216 ,位置：点击浏览选择对应存储位置，点击下一步。</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/4.png" class="">
+ <strong>建议按照不同系统、不同功能分类设置虚拟机名称以及存储位置,如下：</strong><ul>
 <li>Ubuntu<ul>
 <li>Git</li>
 <li>ShowDoc</li>
@@ -30,27 +27,47 @@
 </li>
 </ul>
 </li>
-<li>使用默认推荐磁盘大小，选择将虚拟磁盘存储为单个文件，点击下一步。<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/5.png" class=""></li>
-<li>点击完成<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/6.png" class=""></li>
-<li>编辑虚拟机设置/或双击设备中任意选项，进行虚拟机相关内容调整<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/7.png" class=""></li>
-<li>根据自身需求调整对应的内存、处理器、硬盘、CD/DVD、网络适配器。这里我的修改如下： <img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/8.png" class="">
+<li><strong>使用默认推荐磁盘大小，选择将虚拟磁盘存储为单个文件，点击下一步</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/5.png" class=""></li>
+<li><strong>点击完成</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/6.png" class=""></li>
+<li><strong>编辑虚拟机设置/或双击设备中任意选项，进行虚拟机相关内容调整</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/7.png" class=""></li>
+<li><strong>根据自身需求调整对应的内存、处理器、硬盘、CD/DVD、网络适配器。这里我的修改如下：</strong> <img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/8.png" class="">
 <img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/9.png" class="">
 <img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/10.png" class="">
 <img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/11.png" class=""></li>
-<li>点击开启虚拟机<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/12.png" class=""></li>
-<li>选择语言，点击Install Ubuntu/安装 Ubuntu (这里我选择English)<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/13.png" class="">
-<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/14.png" class=""></li>
-<li>接下来，请按照如下图片操作<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/15.png" class="">
+<li><strong>点击开启虚拟机</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/12.png" class=""></li>
+<li><strong>选择语言，点击Install Ubuntu/安装 Ubuntu (这里我选择English)</strong><br>英文版<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/13.png" class="">
+中文版<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/14.png" class=""></li>
+<li><strong>接下来，请按照如下图片操作</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/15.png" class="">
 <img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/16.png" class="">
 <img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/17.png" class="">
 <img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/18.png" class="">
 <img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/19.png" class=""></li>
-<li>设置虚拟机用户名密码<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/20.png" class="">
+<li><strong>设置虚拟机用户名密码</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/20.png" class=""></li>
+<li><strong>正式安装</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/21.png" class=""></li>
+<li><strong>安装完成，重启虚机，点击Restart Now</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/22.png" class=""></li>
+<li><strong>重启中，如下图，一直未未变化，需要手动重启虚拟机</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/23.png" class=""></li>
+<li><strong>登录搭建好的Ubuntu虚机，开始接下来的旅程</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/24.png" class="">
+<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/25.png" class="">
 
 </li>
 </ol>
-<h2 id="调整Ubuntu显示不全问题"><a href="#调整Ubuntu显示不全问题" class="headerlink" title="调整Ubuntu显示不全问题"></a>调整Ubuntu显示不全问题</h2><ul>
-<li><a href="https://blog.csdn.net/maoyuuu/article/details/93622371" target="_blank" rel="noopener">参考</a></li>
+<h2 id="打开虚机是，出现如下图问题"><a href="#打开虚机是，出现如下图问题" class="headerlink" title="打开虚机是，出现如下图问题"></a>打开虚机是，出现如下图问题</h2><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/28.png" class="">
+<ol>
+<li><strong>打开运行窗口（Win + R），输入：services.msc</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/31.png" class=""></li>
+<li><strong>找到对应的VMware服务，启动服务</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/30.png" class="">
+<a href="https://jingyan.baidu.com/article/cbf0e50091dd362eaa2893e3.html" target="_blank" rel="noopener">参考</a></li>
+</ol>
+<h2 id="调整Ubuntu显示不全问题"><a href="#调整Ubuntu显示不全问题" class="headerlink" title="调整Ubuntu显示不全问题"></a>调整Ubuntu显示不全问题</h2><p><strong>搭建Ubuntu虚拟机之后，可能会出现Ubuntu显示全问题</strong></p>
+<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/27.png" class="">
+<ol>
+<li><strong>首先选择查看 -&gt; 自动调整大小 -&gt; 自动适应客户机</strong><img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/26.png" class=""></li>
+<li>打开终端，输入： sudo apt-get install open-vm-tools</li>
+<li>安装依赖： sudo apt-get install open-vm-tools</li>
+<li>重启： reboot</li>
+<li>最后再次登录，通过快捷键 Ctrl+Shift+Enter 实现全屏<img src="/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/29.png" class=""></li>
+</ol>
+<ul>
+<li><a href="https://docs.vmware.com/cn/VMware-Tools/index.html" target="_blank" rel="noopener">参考</a></li>
 </ul>
 ]]></content>
       <categories>
@@ -69,7 +86,19 @@
   <entry>
     <title>API技术文档工具-ShowDoc</title>
     <url>/2019/12/12/API%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E5%B7%A5%E5%85%B7-ShowDoc/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>ShowDoc就是一个非常适合IT团队的在线文档分享工具，它可以加快团队之间沟通的效率</p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><ol>
+<li>安装虚拟机-Ubuntu <a href="https://xiexjcoder.github.io/2019/12/15/VMware%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" target="_blank" rel="noopener">参考</a> </li>
+<li>安装Docker <a href="https://xiexjcoder.github.io/2019/12/08/Docker%E5%85%A5%E9%97%A8%E7%AF%87/" target="_blank" rel="noopener">参考</a></li>
+<li>安装ShowDoc<ul>
+<li>下载脚本并赋予权限<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https://www.showdoc.cc/script/showdoc;</span><br><span class="line">chmod +x showdoc;</span><br></pre></td></tr></table></figure></li>
+<li>默认安装中文版。如果想安装英文版，请加上en参数，如 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">./showdoc en    </span><br><span class="line">or    </span><br><span class="line">./showdoc</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>访问： <a href="http://localhost:4999" target="_blank" rel="noopener">http://localhost:4999</a> 初始登录名：showdoc 登录密码：123456</li>
+<li><strong><a href="https://www.showdoc.cc/help?page_id=1385767280275683" target="_blank" rel="noopener">参考</a></strong></li>
+</ol>
+]]></content>
       <categories>
         <category>基础学习篇</category>
       </categories>
@@ -86,8 +115,21 @@
   <entry>
     <title>Docker入门篇</title>
     <url>/2019/12/08/Docker%E5%85%A5%E9%97%A8%E7%AF%87/</url>
-    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。</p>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。</p>
+<h2 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h2><ul>
+<li>sudo wget -qO- <a href="https://get.docker.com/" target="_blank" rel="noopener">https://get.docker.com/</a> | sh</li>
+<li>sudo usermod -aG docker xiexj</li>
+<li>docker –version</li>
+</ul>
 ]]></content>
+      <categories>
+        <category>基础学习篇</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>gitlab服务器搭建</title>
+    <url>/2019/12/04/gitlab%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1>]]></content>
       <categories>
         <category>基础学习篇</category>
       </categories>
@@ -110,14 +152,6 @@
 <li>素材管理</li>
 </ol>
 <h1 id="开发者模式介绍"><a href="#开发者模式介绍" class="headerlink" title="开发者模式介绍"></a>开发者模式介绍</h1><h1 id="开发环境搭建"><a href="#开发环境搭建" class="headerlink" title="开发环境搭建"></a>开发环境搭建</h1>]]></content>
-      <categories>
-        <category>基础学习篇</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>gitlab服务器搭建</title>
-    <url>/2019/12/04/gitlab%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1>]]></content>
       <categories>
         <category>基础学习篇</category>
       </categories>
